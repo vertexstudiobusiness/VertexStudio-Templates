@@ -1,0 +1,1850 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vertex Studio — 16 Premium Website Templates</title>
+<meta name="description" content="Vertex Studio's premium template showcase: all 16 hospitality and fashion templates live today in one shared hub. Open any live preview in a new tab, deploy anywhere in minutes.">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#080808">
+<meta property="og:title" content="Vertex Studio — 16 Premium Website Templates">
+<meta property="og:description" content="16 production-ready, independently hosted website templates for cafes, clothing brands, restaurants and hotels.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230B0A08'/%3E%3Cpath d='M8 10l8 13 8-13h-5.6L16 14.6 13.6 10z' fill='%23EFE9DF'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,500;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   Vertex Studio — Template Marketplace Showcase
+   Single-file static site. No build step. No framework.
+   ============================================================ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --bg:#080808;
+  --bg-2:#100F0C;
+  --bg-3:#1A1713;
+  --ink:#F2EDE3;
+  --ink-dim:#A79D8C;
+  --ink-faint:#79715F;
+  --line:rgba(242,237,227,.09);
+  --line-strong:rgba(242,237,227,.2);
+  --card:#141110;
+  --card-2:#191512;
+  --card-ink:#F2EDE3;
+  --card-dim:#A69D8B;
+  --card-line:rgba(242,237,227,.11);
+  --chip-bg:rgba(242,237,227,.055);
+  --champagne:#C6A66B;
+  --champagne-bright:#E2C896;
+  --bronze:#8C6F45;
+  --red:#D6453C;      --red-deep:#B23A31;
+  --yellow:#EDAF3C;   --yellow-deep:#A97A1F;
+  --green:#3FA97C;    --green-deep:#2E8664;
+  --blue:#4C7DF0;     --blue-deep:#3B5FC0;
+  --font-display:"Playfair Display",Georgia,"Times New Roman",serif;
+  --font-body:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --font-mono:ui-monospace,"SFMono-Regular","Cascadia Mono",Menlo,Consolas,monospace;
+  --ease:cubic-bezier(.22,.68,.26,1);
+  --radius:18px;
+  --shadow-card:0 1px 2px rgba(0,0,0,.4),0 18px 40px -18px rgba(0,0,0,.6);
+  --shadow-hover:0 2px 6px rgba(0,0,0,.45),0 40px 68px -22px rgba(0,0,0,.75);
+  /* Liquid Glass system */
+  --glass-hi:rgba(255,255,255,.09);
+  --glass-grad:linear-gradient(165deg,rgba(34,30,25,.58),rgba(14,13,11,.5));
+  --glass-grad-dense:linear-gradient(165deg,rgba(34,30,25,.72),rgba(12,11,9,.78));
+  --glass-line:rgba(242,237,227,.13);
+  --glass-champ:rgba(198,166,107,.34);
+}
+
+html{-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion: no-preference){html{scroll-behavior:smooth}}
+html{scroll-padding-top:92px}
+
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:var(--font-body);
+  font-size:16px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  min-height:100vh;
+  overflow-x:hidden;
+}
+body.modal-open,body.nav-open{overflow:hidden}
+
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+ul,ol{list-style:none}
+
+/* Film-grain overlay — one static layer across the whole page */
+body::after{
+  content:"";position:fixed;inset:0;z-index:2100;pointer-events:none;opacity:.05;mix-blend-mode:soft-light;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.6'/%3E%3C/svg%3E");
+  background-size:180px 180px;
+}
+
+::selection{background:rgba(198,166,107,.36);color:#100E0A}
+:focus{outline:none}
+:focus-visible{outline:2px solid var(--champagne);outline-offset:3px;border-radius:4px}
+.visually-hidden{position:absolute!important;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+
+.skip-link{
+  position:fixed;top:-60px;left:16px;z-index:200;
+  background:var(--ink);color:var(--bg-2);font-weight:600;font-size:.85rem;
+  padding:10px 16px;border-radius:10px;transition:top .2s var(--ease);
+}
+.skip-link:focus{top:12px}
+
+.container{width:100%;max-width:1240px;margin-inline:auto;padding-inline:clamp(20px,4.5vw,44px)}
+
+/* ---------- Typography helpers ---------- */
+.kicker{
+  display:inline-flex;align-items:center;gap:12px;
+  font-family:var(--font-mono);font-size:.7rem;font-weight:600;
+  letter-spacing:.28em;text-transform:uppercase;color:var(--champagne);
+}
+.kicker::before{content:"";width:34px;height:1px;background:linear-gradient(90deg,transparent,var(--champagne));opacity:.9}
+.section-head h2{
+  font-family:var(--font-display);font-weight:700;color:var(--ink);
+  font-size:clamp(1.7rem,3.4vw,2.5rem);line-height:1.14;letter-spacing:-.015em;
+  margin-top:14px;
+}
+.section-head p.sub{color:var(--ink-dim);max-width:56ch;margin-top:12px;font-size:.98rem}
+.section-head{margin-bottom:clamp(26px,4vw,44px)}
+
+/* ---------- Buttons ---------- */
+.btn{
+  position:relative;overflow:hidden;
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  font-family:var(--font-body);font-weight:600;letter-spacing:.05em;
+  border-radius:999px;border:1px solid transparent;
+  transition:transform .28s var(--ease),box-shadow .28s var(--ease),background .28s var(--ease),color .28s var(--ease),border-color .28s var(--ease);
+  white-space:nowrap;
+}
+.btn .lucide, .btn svg.lucide{width:17px;height:17px}
+.btn-primary{background:var(--ink);color:#14100A}
+.btn-primary:hover{background:#FFFDF4;transform:translateY(-2px);box-shadow:0 16px 32px -12px rgba(198,166,107,.3)}
+.btn-primary:active{transform:translateY(0)}
+/* Liquid Glass secondary CTAs — translucent surface, cursor light, sheen sweep */
+.btn-ghost,.btn-hero-ghost{
+  border-color:rgba(198,166,107,.38);
+  color:var(--ink);
+  background:
+    radial-gradient(150px 90px at var(--gx,50%) var(--gy,25%),rgba(198,166,107,.16),transparent 78%),
+    linear-gradient(160deg,rgba(242,237,227,.055),rgba(242,237,227,.012));
+  box-shadow:inset 0 1px 0 var(--glass-hi),inset 0 -1px 0 rgba(0,0,0,.3);
+}
+.btn-ghost:hover,.btn-hero-ghost:hover{
+  border-color:rgba(198,166,107,.85);
+  color:var(--champagne-bright);
+  transform:translateY(-2px);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.13),0 0 36px -10px rgba(198,166,107,.45);
+}
+.btn-ghost::after,.btn-hero-ghost::after{
+  content:"";position:absolute;top:-20%;bottom:-20%;left:0;width:40%;
+  background:linear-gradient(105deg,transparent 8%,rgba(255,255,255,.16) 50%,transparent 92%);
+  transform:translateX(-160%) skewX(-16deg);opacity:0;
+  transition:transform .8s var(--ease);
+}
+.btn-ghost:hover::after,.btn-hero-ghost:hover::after{transform:translateX(320%) skewX(-16deg);opacity:1}
+.btn-lg{height:54px;padding:0 28px;font-size:.95rem}
+.btn-md{height:46px;padding:0 22px;font-size:.92rem}
+.btn-sm{height:40px;padding:0 20px;font-size:.74rem;letter-spacing:.1em;text-transform:uppercase}
+
+/* Dark button (on dark cards it renders as the ivory luxury CTA) */
+.btn-dark{background:var(--card-ink);color:#14100A;border-color:var(--card-ink)}
+.btn-dark:hover{background:#FFFDF4;transform:translateY(-2px);box-shadow:0 14px 26px -12px rgba(198,166,107,.3)}
+
+.lucide,[data-lucide]{pointer-events:none}
+
+
+/* ---------- Floating glass navigation (Liquid Glass) ---------- */
+.site-nav{
+  position:sticky;top:0;z-index:100;
+  background:transparent;
+  padding:12px 0 0;
+}
+.nav-inner{
+  position:relative;
+  display:flex;align-items:center;gap:20px;height:74px;
+  border-radius:22px;
+  border:1px solid rgba(242,237,227,.1);
+  background:
+    radial-gradient(240px 130px at var(--gx,50%) var(--gy,0%),rgba(198,166,107,.1),transparent 72%),
+    var(--glass-grad);
+  background-color:rgba(13,12,10,.12);
+  -webkit-backdrop-filter:blur(18px) saturate(150%);
+          backdrop-filter:blur(18px) saturate(150%);
+  box-shadow:inset 0 1px 0 var(--glass-hi),inset 0 -1px 0 rgba(0,0,0,.42),0 24px 48px -22px rgba(0,0,0,.6);
+  transition:background-color .4s var(--ease),box-shadow .4s var(--ease),border-color .4s var(--ease);
+}
+/* Refractive edge ring — light from the top-left, champagne from the bottom-right */
+.nav-inner::before{
+  content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;
+  background:linear-gradient(140deg,rgba(255,255,255,.3),rgba(255,255,255,.05) 30%,transparent 52%,rgba(198,166,107,.34));
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;
+          mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+          mask-composite:exclude;
+  pointer-events:none;
+}
+/* Top shine line */
+.nav-inner::after{
+  content:"";position:absolute;top:0;left:22%;right:22%;height:1px;pointer-events:none;
+  background:linear-gradient(90deg,transparent,rgba(242,237,227,.32),transparent);
+}
+.site-nav.scrolled .nav-inner{
+  background-color:rgba(10,9,7,.74);
+  border-color:rgba(242,237,227,.14);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.08),inset 0 -1px 0 rgba(0,0,0,.5),0 26px 54px -20px rgba(0,0,0,.85);
+}
+.brand{display:inline-flex;align-items:center;gap:12px;flex-shrink:0}
+.brand svg.br-mark{display:block}
+.brand-name{
+  font-family:var(--font-display);font-weight:700;font-size:1.14rem;letter-spacing:.005em;color:var(--ink);
+  display:flex;align-items:baseline;gap:10px;
+}
+.brand-name small{
+  font-family:var(--font-mono);font-weight:500;font-size:.54rem;letter-spacing:.34em;
+  text-transform:uppercase;color:var(--champagne);opacity:.9;
+}
+.nav-links{display:flex;align-items:center;gap:28px;margin-left:28px}
+.nav-links a{
+  position:relative;
+  font-size:.74rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--ink-dim);padding:8px 0;
+  transition:color .25s var(--ease);
+}
+.nav-links a::after{
+  content:"";position:absolute;left:0;right:0;bottom:2px;height:1px;
+  background:linear-gradient(90deg,var(--champagne),transparent);
+  transform:scaleX(0);transform-origin:left;transition:transform .35s var(--ease);
+}
+.nav-links a:hover{color:var(--ink)}
+.nav-links a:hover::after{transform:scaleX(1)}
+.nav-actions{display:flex;align-items:center;gap:12px;margin-left:auto}
+.nav-toggle{
+  display:none;width:44px;height:44px;border-radius:999px;border:1px solid rgba(242,237,227,.16);
+  align-items:center;justify-content:center;color:var(--ink);
+  background:linear-gradient(160deg,rgba(242,237,227,.07),rgba(242,237,227,.015));
+  box-shadow:inset 0 1px 0 var(--glass-hi);
+  transition:transform .3s var(--ease),border-color .3s var(--ease),box-shadow .3s var(--ease);
+}
+.nav-toggle:hover{border-color:rgba(198,166,107,.6);box-shadow:inset 0 1px 0 var(--glass-hi),0 0 22px -8px rgba(198,166,107,.4)}
+body.nav-open .nav-toggle{transform:rotate(90deg)}
+.nav-toggle .lucide{width:19px;height:19px}
+.nav-toggle .icon-close{display:none}
+body.nav-open .nav-toggle .icon-close{display:block}
+body.nav-open .nav-toggle .icon-menu{display:none}
+
+.nav-cta-mobile{display:none}
+
+/* Mobile floating glass nav panel */
+@media (max-width:900px){
+  .nav-links{
+    display:flex;
+    position:fixed;top:90px;left:16px;right:16px;z-index:99;
+    flex-direction:column;align-items:stretch;gap:2px;margin:0;
+    border:1px solid rgba(242,237,227,.12);border-radius:20px;
+    background:
+      radial-gradient(320px 160px at 30% 0%,rgba(198,166,107,.08),transparent 75%),
+      var(--glass-grad-dense);
+    padding:12px;box-shadow:inset 0 1px 0 var(--glass-hi),0 48px 92px -28px rgba(0,0,0,.92);
+    -webkit-backdrop-filter:blur(24px) saturate(150%);
+            backdrop-filter:blur(24px) saturate(150%);
+    opacity:0;visibility:hidden;transform:translateY(-14px) scale(.97);pointer-events:none;
+    transition:opacity .28s var(--ease),transform .28s var(--ease),visibility 0s linear .28s;
+  }
+  .nav-links::before{
+    content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;
+    background:linear-gradient(150deg,rgba(255,255,255,.24),transparent 40%,rgba(198,166,107,.3));
+    -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+    -webkit-mask-composite:xor;
+            mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+            mask-composite:exclude;
+    pointer-events:none;
+  }
+  body.nav-open .nav-links{
+    opacity:1;visibility:visible;transform:translateY(0) scale(1);pointer-events:auto;
+    transition:opacity .32s var(--ease),transform .4s var(--ease) .04s,visibility 0s;
+  }
+  .nav-links a{padding:14px 16px;font-size:.9rem;letter-spacing:.14em;border-radius:12px}
+  .nav-links a::after{display:none}
+  .nav-links a:hover{background:rgba(198,166,107,.08)}
+  .nav-cta-mobile{
+    display:inline-flex;margin-top:10px;border-top:1px solid var(--line);padding-top:16px!important;
+    justify-content:center;color:var(--champagne);
+  }
+  .nav-toggle{display:inline-flex}
+  .nav-actions .btn{display:none}
+}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;padding:clamp(76px,10vh,124px) 0 clamp(60px,8vh,100px);overflow:hidden}
+.hero::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:
+    radial-gradient(52% 62% at 78% 4%,rgba(198,166,107,.13),transparent 62%),
+    radial-gradient(46% 56% at 2% 86%,rgba(140,111,69,.11),transparent 62%),
+    radial-gradient(26% 28% at 52% 44%,rgba(198,166,107,.05),transparent 72%);
+}
+.hero-glow{
+  position:absolute;z-index:0;top:0;left:0;width:calc(min(600px,60vw));height:calc(min(600px,60vw));
+  pointer-events:none;opacity:.75;will-change:transform;
+  background:radial-gradient(circle at center,rgba(198,166,107,.11),rgba(198,166,107,.035) 42%,transparent 68%);
+}
+.hero-grid-lines{
+  position:absolute;inset:0;pointer-events:none;opacity:.45;
+  background-image:linear-gradient(rgba(242,237,227,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(242,237,227,.04) 1px,transparent 1px);
+  background-size:76px 76px;
+  -webkit-mask-image:radial-gradient(72% 82% at 58% 24%,#000 24%,transparent 76%);
+          mask-image:radial-gradient(72% 82% at 58% 24%,#000 24%,transparent 76%);
+}
+.hero-grid{position:relative;display:grid;grid-template-columns:1.02fr .98fr;gap:clamp(34px,5vw,72px);align-items:center}
+.hero-copy{position:relative;z-index:2}
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:11px;
+  font-family:var(--font-mono);font-size:.66rem;font-weight:600;letter-spacing:.32em;text-transform:uppercase;
+  color:var(--ink-dim);border:1px solid rgba(198,166,107,.32);border-radius:999px;padding:9px 18px;
+  background:
+    radial-gradient(130px 44px at var(--gx,30%) var(--gy,20%),rgba(198,166,107,.14),transparent 75%),
+    linear-gradient(120deg,rgba(198,166,107,.1),rgba(198,166,107,.02));
+  box-shadow:inset 0 1px 0 var(--glass-hi),0 12px 26px -16px rgba(0,0,0,.55);
+  -webkit-backdrop-filter:blur(8px);
+          backdrop-filter:blur(8px);
+}
+.eyebrow-dot{
+  width:7px;height:7px;border-radius:50%;background:var(--champagne);
+  box-shadow:0 0 0 3px rgba(198,166,107,.16),0 0 12px rgba(198,166,107,.55);
+}
+.hero h1{
+  font-family:var(--font-display);font-weight:700;color:var(--ink);
+  font-size:clamp(2.55rem,5.9vw,4.55rem);line-height:1.07;letter-spacing:-.008em;
+  margin-top:26px;
+}
+.hero h1 .hl{display:block;overflow:hidden;padding-bottom:.09em;margin-bottom:-.09em}
+.hero h1 .hli{display:inline-block;transform:translateY(118%)}
+.hero h1 em{
+  font-style:italic;font-weight:500;
+  background:linear-gradient(100deg,var(--champagne) 12%,#EBD8A8 52%,var(--champagne) 90%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.hero-desc{color:var(--ink-dim);font-size:clamp(1rem,1.5vw,1.12rem);line-height:1.78;max-width:48ch;margin-top:22px}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:36px}
+
+/* Hero primary CTA — ivory pill with a traveling shine */
+.btn-hero-primary{
+  background:linear-gradient(160deg,#F8F2E6,#ECE2CE);color:#141008;
+  height:56px;padding:0 30px;font-size:.95rem;
+  box-shadow:0 18px 42px -16px rgba(198,166,107,.4),inset 0 1px 0 rgba(255,255,255,.7);
+}
+.btn-hero-primary::after{
+  content:"";position:absolute;top:-20%;bottom:-20%;left:0;width:44%;
+  background:linear-gradient(105deg,transparent 8%,rgba(255,255,255,.7) 50%,transparent 92%);
+  transform:translateX(-140%) skewX(-16deg);opacity:0;
+  transition:transform .9s var(--ease);
+}
+.btn-hero-primary:hover{transform:translateY(-3px);box-shadow:0 28px 54px -18px rgba(198,166,107,.52),inset 0 1px 0 rgba(255,255,255,.85)}
+.btn-hero-primary:hover::after{transform:translateX(300%) skewX(-16deg);opacity:1}
+.btn-hero-primary:active{transform:translateY(-1px)}
+
+/* Hero secondary CTA — thin champagne outline over Liquid Glass base */
+.btn-hero-ghost{height:56px;padding:0 28px;font-size:.95rem}
+.btn-hero-ghost .lucide{color:var(--champagne)}
+
+/* Entrance choreography — pure CSS, reads normally without JS */
+.hero-eyebrow{animation:hr-rise .9s var(--ease) .1s both}
+.hero h1 .hl:nth-child(1) .hli{animation:hr-hl 1.05s var(--ease) .26s both}
+.hero h1 .hl:nth-child(2) .hli{animation:hr-hl 1.05s var(--ease) .4s both}
+.hero-desc{animation:hr-rise .95s var(--ease) .64s both}
+.hero-cta>*:nth-child(1){animation:hr-rise .9s var(--ease) .8s both}
+.hero-cta>*:nth-child(2){animation:hr-rise .9s var(--ease) .88s both}
+.hero-counts{animation:hr-fade 1.1s var(--ease) 1.02s both}
+@keyframes hr-rise{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
+@keyframes hr-hl{from{transform:translateY(118%)}to{transform:translateY(0)}}
+@keyframes hr-fade{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+
+/* Refined horizontal collection indicator */
+.hero-counts{
+  display:flex;flex-wrap:wrap;align-items:baseline;margin-top:46px;width:100%;
+}
+.hero-counts li{
+  display:inline-flex;align-items:baseline;gap:9px;position:relative;
+  font-family:var(--font-mono);font-size:.68rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--ink-faint);padding:2px 0;
+  transition:color .3s var(--ease);
+}
+.hero-counts li:hover,.hero-counts li:hover strong{color:var(--champagne)}
+.hero-counts li+li{margin-left:26px}
+.hero-counts li+li::before{
+  content:"";position:absolute;left:-14px;top:3px;bottom:3px;width:1px;
+  background:linear-gradient(180deg,transparent,var(--champagne) 40% 60%,transparent);
+  opacity:.4;
+}
+.hero-counts strong{
+  font-family:var(--font-display);font-weight:700;font-size:1.32rem;letter-spacing:0;color:var(--ink);
+  transition:color .3s var(--ease);
+}
+.hero-counts .hc-lead strong{color:var(--champagne-bright)}
+
+/* ---------- Hero visual — layered editorial mock-up stack ---------- */
+.hero-visual{position:relative;z-index:1}
+.hf-stack{
+  position:relative;height:clamp(400px,29vw,558px);
+  perspective:1400px;transform-style:preserve-3d;will-change:transform;
+}
+.hf-card{
+  position:absolute;display:block;
+  border-radius:16px;overflow:hidden;
+  border:1px solid rgba(242,237,227,.13);
+  background:#0E0D0B;
+  box-shadow:0 62px 112px -42px rgba(0,0,0,.88),0 0 0 1px rgba(0,0,0,.5);
+  transition:transform .55s var(--ease),border-color .55s var(--ease),box-shadow .55s var(--ease),z-index 0s;
+}
+.hf-card .hf-in{border-radius:inherit;overflow:hidden;animation:hr-card-in 1.15s var(--ease) both,hf-float 7.5s ease-in-out infinite}
+.hf-card .shot{aspect-ratio:16/10.4}
+.hf-label{
+  position:absolute;left:14px;bottom:12px;z-index:5;
+  font-family:var(--font-mono);font-size:.58rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--champagne-bright);
+  border:1px solid rgba(198,166,107,.4);border-radius:999px;padding:7px 13px;
+  background:
+    radial-gradient(90px 40px at var(--gx,40%) var(--gy,20%),rgba(198,166,107,.16),transparent 78%),
+    linear-gradient(160deg,rgba(30,27,22,.6),rgba(12,11,9,.5));
+  box-shadow:inset 0 1px 0 var(--glass-hi),0 10px 22px -12px rgba(0,0,0,.65);
+  -webkit-backdrop-filter:blur(10px) saturate(140%);
+          backdrop-filter:blur(10px) saturate(140%);
+}
+.hf-a{width:62%;top:1%;right:0;transform:rotateY(-7deg) rotateX(2deg) translateZ(42px) rotate(-1.2deg);z-index:3}
+.hf-b{width:47%;top:46%;left:1%;transform:rotateY(8deg) rotateX(2deg) translateZ(18px) rotate(1.7deg);z-index:2}
+.hf-c{width:35%;top:-6%;left:9%;transform:rotateY(10deg) rotateX(-2deg) translateZ(6px) rotate(2.6deg);z-index:1;opacity:.94}
+.hf-b .hf-in{animation-duration:1.15s,8.6s;animation-delay:.66s,2.95s}
+.hf-a .hf-in{animation-delay:.5s,2.4s}
+.hf-c .hf-in{animation-duration:1.15s,6.6s;animation-delay:.82s,2.7s}
+.hf-card:hover{transform:translateY(-12px) rotate(0deg);border-color:rgba(198,166,107,.4);box-shadow:0 82px 132px -44px rgba(0,0,0,.92),0 0 46px -8px rgba(198,166,107,.2);z-index:7!important}
+.hf-card:hover .hf-in{animation-play-state:paused}
+/* Liquid Glass — cursor specular light + refractive champagne ring */
+.hf-card::before{
+  content:"";position:absolute;inset:0;z-index:6;pointer-events:none;opacity:0;
+  mix-blend-mode:screen;
+  background:radial-gradient(300px 190px at var(--gx,50%) var(--gy,30%),rgba(198,166,107,.22),transparent 72%);
+  transition:opacity .45s var(--ease);
+}
+.hf-card::after{
+  content:"";position:absolute;inset:0;z-index:6;pointer-events:none;
+  border-radius:inherit;padding:1px;
+  background:linear-gradient(150deg,rgba(255,255,255,.3),transparent 36%,transparent 62%,rgba(198,166,107,.45));
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;
+          mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+          mask-composite:exclude;
+  opacity:0;transition:opacity .45s var(--ease);
+}
+.hf-card:hover::before,.hf-card:hover::after{opacity:1}
+@keyframes hr-card-in{from{opacity:0;transform:translateY(52px) scale(.95)}to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes hf-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-13px)}}
+
+.hero-watermark{
+  position:absolute;left:-2%;bottom:-5%;z-index:-1;pointer-events:none;user-select:none;
+  font-family:var(--font-display);font-weight:700;font-size:clamp(7rem,15vw,14.5rem);line-height:.8;
+  letter-spacing:-.02em;white-space:nowrap;
+  color:transparent;background:linear-gradient(180deg,rgba(242,237,227,.075),transparent 72%);
+  -webkit-background-clip:text;background-clip:text;
+}
+
+@media (max-width:1020px){
+  .hero-grid{grid-template-columns:1fr;gap:56px}
+  .hero-visual{max-width:620px;margin:0 auto;width:100%}
+  .hf-stack{height:clamp(360px,52vw,470px)}
+}
+@media (max-width:560px){
+  .hero{padding-top:60px}
+  .hero-cta{gap:12px}
+  .hero-cta .btn{width:100%}
+  .btn-hero-primary,.btn-hero-ghost{height:54px;padding:0 22px}
+  .hf-stack{height:392px}
+  .hf-a{width:80%;top:4%}
+  .hf-b{width:60%;top:54%;left:0}
+  .hf-c{display:none}
+  .hero-counts{margin-top:36px}
+  .hero-counts li+li{margin-left:16px}
+  .hero-counts li+li::before{left:-9px}
+  .hero-watermark{font-size:6.2rem;bottom:-3%}
+}
+
+
+/* ---------- Sections ---------- */
+.section{padding:clamp(64px,9vh,104px) 0;position:relative}
+.section+.section{border-top:1px solid var(--line)}
+
+/* ---------- Category tiles ---------- */
+.cat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.cat-tile{
+  position:relative;display:block;
+  background:
+    radial-gradient(280px 140px at var(--gx,50%) var(--gy,0%),rgba(198,166,107,.06),transparent 72%),
+    linear-gradient(165deg,rgba(28,25,20,.55),rgba(15,13,11,.85));
+  border:1px solid rgba(242,237,227,.11);border-radius:var(--radius);
+  box-shadow:inset 0 1px 0 var(--glass-hi),0 24px 48px -32px rgba(0,0,0,.55);
+  padding:26px 24px 24px;overflow:hidden;
+  transition:transform .3s var(--ease),border-color .3s var(--ease),box-shadow .3s var(--ease);
+}
+.cat-tile::before{
+  content:"";position:absolute;top:0;left:0;right:0;height:3px;
+  background:var(--cat-accent);opacity:.55;
+  transition:opacity .3s var(--ease),height .3s var(--ease);
+}
+.cat-tile:hover{transform:translateY(-5px);border-color:rgba(198,166,107,.3);box-shadow:inset 0 1px 0 var(--glass-hi),0 32px 58px -24px rgba(0,0,0,.7),0 0 30px -14px rgba(198,166,107,.18)}
+.cat-tile:hover::before{opacity:1;height:4px}
+.cat-icon{
+  width:46px;height:46px;border-radius:13px;display:inline-flex;align-items:center;justify-content:center;
+  background:color-mix(in srgb,var(--cat-accent) 14%,transparent);
+  border:1px solid color-mix(in srgb,var(--cat-accent) 32%,transparent);
+  margin-bottom:18px;
+}
+.cat-icon .lucide{width:21px;height:21px;color:var(--cat-accent)}
+.cat-tile h3{font-family:var(--font-display);font-weight:600;font-size:1.12rem;color:var(--ink);letter-spacing:-.01em}
+.cat-tile .cat-blurb{color:var(--ink-dim);font-size:.88rem;line-height:1.55;margin-top:8px}
+.cat-tile .cat-meta{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:20px}
+.cat-count{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint)}
+.cat-live{display:inline-flex;align-items:center;gap:6px;font-family:var(--font-mono);font-size:.68rem;letter-spacing:.08em;color:var(--ink-dim)}
+.cat-live .lucide{width:12px;height:12px;color:var(--cat-accent)}
+.cat-go{
+  position:absolute;top:22px;right:20px;opacity:0;transform:translate(-6px,4px);transition:all .3s var(--ease);
+}
+.cat-go .lucide{width:18px;height:18px;color:var(--cat-accent)}
+.cat-tile:hover .cat-go{opacity:1;transform:translate(0,0)}
+@media (max-width:1000px){.cat-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.cat-grid{grid-template-columns:1fr}}
+
+/* ---------- Gallery toolbar ---------- */
+.toolbar{
+  display:flex;flex-wrap:wrap;align-items:center;gap:14px;
+  background:
+    radial-gradient(420px 140px at var(--gx,50%) var(--gy,0%),rgba(198,166,107,.05),transparent 72%),
+    linear-gradient(165deg,rgba(30,27,22,.55),rgba(16,15,12,.82));
+  border:1px solid rgba(242,237,227,.12);border-radius:var(--radius);
+  box-shadow:inset 0 1px 0 var(--glass-hi),0 22px 46px -32px rgba(0,0,0,.6);
+  padding:14px;margin-bottom:14px;
+}
+.search-wrap{position:relative;flex:1 1 300px;min-width:230px}
+.search-wrap .lucide,.search-wrap>svg{
+  position:absolute;left:14px;top:50%;transform:translateY(-50%);
+  width:17px;height:17px;color:var(--ink-faint);pointer-events:none;
+}
+.search-wrap input{
+  width:100%;height:46px;
+  background:rgba(242,237,227,.045);
+  border:1px solid rgba(242,237,227,.12);border-radius:12px;
+  color:var(--ink);font:inherit;font-size:.94rem;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.07),inset 0 8px 18px rgba(0,0,0,.3);
+  padding:0 14px 0 42px;
+  transition:border-color .2s var(--ease),box-shadow .2s var(--ease),background .2s var(--ease);
+}
+.search-wrap input::placeholder{color:var(--ink-faint)}
+.search-wrap input:focus-visible{outline:none;border-color:var(--champagne);box-shadow:0 0 0 3px rgba(198,166,107,.16)}
+.cat-tabs{display:flex;flex-wrap:wrap;gap:6px}
+.cat-tabs button{
+  font-size:.86rem;font-weight:500;color:var(--ink-dim);
+  border:1px solid rgba(242,237,227,.1);border-radius:10px;padding:9px 15px;
+  background:linear-gradient(160deg,rgba(242,237,227,.05),rgba(242,237,227,.012));
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.05);
+  transition:all .2s var(--ease);
+}
+.cat-tabs button:hover{color:var(--ink);background:rgba(239,233,223,.09);border-color:rgba(242,237,227,.2)}
+.cat-tabs button[aria-pressed="true"]{
+  color:var(--champagne-bright);font-weight:600;
+  background:
+    radial-gradient(120px 56px at 25% 15%,rgba(198,166,107,.22),transparent 78%),
+    linear-gradient(160deg,rgba(198,166,107,.2),rgba(198,166,107,.05));
+  border-color:rgba(198,166,107,.55);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.14),0 10px 22px -14px rgba(198,166,107,.4);
+}
+.sort-wrap{position:relative;display:flex;align-items:center;gap:9px;margin-left:auto}
+.sort-label{font-family:var(--font-mono);font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-faint)}
+.sort-wrap select{
+  appearance:none;-webkit-appearance:none;
+  height:46px;background:rgba(242,237,227,.045);
+  border:1px solid rgba(242,237,227,.12);border-radius:12px;
+  color:var(--ink);font:inherit;font-size:.88rem;font-weight:500;padding:0 38px 0 14px;cursor:pointer;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.07),inset 0 8px 18px rgba(0,0,0,.3);
+  transition:border-color .2s var(--ease);
+}
+.sort-wrap select:hover,.sort-wrap select:focus-visible{border-color:var(--line-strong)}
+.sort-wrap::after{
+  content:"";position:absolute;right:50px;bottom:0;top:0;margin:auto 0;height:16px;width:16px;pointer-events:none;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%237A7161' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") no-repeat center/contain;
+}
+.results-line{
+  font-family:var(--font-mono);font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink-faint);padding:10px 6px 24px;
+}
+.results-line b{color:var(--ink-dim);font-weight:600}
+
+/* ---------- Gallery grid & cards ---------- */
+.grid{display:grid;grid-template-columns:1fr;gap:22px}
+@media (min-width:600px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (min-width:880px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (min-width:1180px){.grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+
+.card{
+  position:relative;
+  background:
+    radial-gradient(360px 230px at var(--gx,50%) var(--gy,15%),rgba(198,166,107,.07),transparent 70%),
+    linear-gradient(165deg,rgba(30,26,22,.62),rgba(18,15,13,.9));
+  color:var(--card-ink);border-radius:20px;overflow:hidden;
+  box-shadow:inset 0 1px 0 var(--glass-hi),var(--shadow-card);
+  border:1px solid rgba(242,237,227,.11);
+  display:flex;flex-direction:column;
+  transition:transform .35s var(--ease),box-shadow .35s var(--ease),border-color .35s var(--ease);
+}
+/* Liquid Glass — refractive champagne edge ring on hover */
+.card::after{
+  content:"";position:absolute;inset:0;pointer-events:none;z-index:1;
+  border-radius:inherit;padding:1px;
+  background:linear-gradient(150deg,rgba(255,255,255,.18),transparent 36%,transparent 64%,rgba(198,166,107,.34));
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;
+          mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+          mask-composite:exclude;
+  opacity:0;transition:opacity .4s var(--ease);
+}
+.card:hover::after{opacity:1}
+.card:hover{transform:translateY(-6px);box-shadow:inset 0 1px 0 var(--glass-hi),0 46px 74px -28px rgba(0,0,0,.78),0 0 40px -16px rgba(198,166,107,.22);border-color:rgba(198,166,107,.3)}
+.card.is-soon::after{display:none}
+.card.is-soon{opacity:.72}
+.card.is-soon:hover{transform:none;box-shadow:var(--shadow-card)}
+.card-body{display:flex;flex-direction:column;flex:1;padding:18px 19px 19px}
+.card-top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px}
+.code-chip{
+  font-family:var(--font-mono);font-weight:600;font-size:.68rem;letter-spacing:.12em;
+  padding:5px 9px;border-radius:7px;
+  background:color-mix(in srgb,var(--cat-accent) 13%,transparent);
+  color:var(--cat-accent);
+  transition:background .25s var(--ease),color .25s var(--ease);
+}
+.card:hover .code-chip{background:color-mix(in srgb,var(--cat-accent) 22%,transparent)}
+.cat-pill{display:inline-flex;align-items:center;gap:7px;font-size:.76rem;font-weight:500;color:var(--card-dim)}
+.cat-pill .dot{width:8px;height:8px;border-radius:50%;background:var(--cat-accent);flex-shrink:0}
+.card-name{font-family:var(--font-display);font-weight:600;font-size:1.16rem;letter-spacing:-.015em;line-height:1.25}
+.card-desc{color:var(--card-dim);font-size:.875rem;line-height:1.58;margin-top:7px;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:13px}
+.tags li{
+  font-family:var(--font-mono);font-size:.66rem;letter-spacing:.05em;color:#B2A78F;
+  background:rgba(242,237,227,.05);
+  border:1px solid rgba(242,237,227,.13);border-radius:6px;padding:4px 8px;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.05);
+}
+.card-foot{display:flex;align-items:stretch;gap:10px;margin-top:auto;padding-top:17px}
+.card-foot .btn-dark{flex:1;padding:0 14px;height:44px;font-size:.88rem;border-radius:11px}
+.icon-btn{
+  width:44px;height:44px;border-radius:999px;flex-shrink:0;
+  border:1px solid rgba(242,237,227,.16);display:inline-flex;align-items:center;justify-content:center;
+  color:var(--card-dim);background:transparent;
+  transition:all .22s var(--ease);
+}
+.icon-btn .lucide{width:17px;height:17px}
+.icon-btn:hover{background:var(--card-ink);color:#14100A;border-color:var(--card-ink)}
+.soon-pill{
+  flex:1;height:44px;display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  border:1.5px dashed rgba(198,166,107,.42);border-radius:999px;color:#A69D8B;
+  font-family:var(--font-mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;
+  background:rgba(198,166,107,.045);box-shadow:inset 0 1px 0 rgba(255,255,255,.055);
+}
+.soon-pill .lucide{width:14px;height:14px}
+
+
+/* ---------- Thumbnail mock-ups (CSS preview, zero external images) ---------- */
+.shot-btn{display:block;width:100%;padding:0;text-align:left;cursor:pointer}
+.shot{
+  position:relative;aspect-ratio:16/10.4;display:flex;flex-direction:column;
+  background:#1A1713;overflow:hidden;
+}
+.shot .chrome{
+  display:flex;align-items:center;gap:6px;flex-shrink:0;
+  padding:8px 10px;background:#14110E;border-bottom:1px solid rgba(255,255,255,.05);
+}
+.chrome .dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.chrome .dot.r{background:var(--red);opacity:.8}
+.chrome .dot.y{background:var(--yellow);opacity:.8}
+.chrome .dot.g{background:var(--green);opacity:.8}
+.chrome .url{
+  flex:1;min-width:0;margin-left:6px;
+  font-family:var(--font-mono);font-size:.58rem;letter-spacing:.04em;color:#B4AC9E;
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.06);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.07);
+  border-radius:5px;padding:3px 8px;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.shot-img{position:absolute;inset:0;z-index:3;width:100%;height:100%;object-fit:cover;object-position:top}
+.mock{
+  position:relative;flex:1;min-height:0;display:flex;flex-direction:column;gap:7px;
+  padding:12px;background:var(--m-bg);color:var(--m-ink);
+  transition:transform .45s var(--ease);
+}
+.shot-btn:hover .mock,.card:hover .shot .mock{transform:scale(1.035)}
+.shot-btn:focus-visible{outline:none;box-shadow:inset 0 0 0 3px var(--champagne)}
+.mock>*{flex-shrink:0}
+.m-nav{display:flex;align-items:center;gap:6px}
+.m-logo{width:13px;height:13px;border-radius:50%;background:var(--m-ac);flex-shrink:0}
+.m-dash{height:3px;width:11px;border-radius:2px;background:rgba(255,255,255,.28);opacity:.85}
+.mock--light .m-dash{background:rgba(0,0,0,.3)}
+.m-cta{margin-left:auto;height:12px;width:30px;border-radius:4px;background:var(--m-ac)}
+
+.m-hero{
+  display:flex;align-items:center;gap:10px;border-radius:7px;padding:11px 10px;
+  background:linear-gradient(100deg,color-mix(in srgb,var(--m-ac) 30%,transparent),transparent 78%);
+  border:1px solid rgba(0,0,0,.07);
+}
+.m-mark{font-family:var(--font-display);font-weight:800;font-size:1rem;letter-spacing:.02em;color:var(--m-ac);line-height:1}
+.m-hlines{flex:1;display:flex;flex-direction:column;gap:4px}
+.m-hlines span{height:3.5px;border-radius:2px;background:currentColor;opacity:.3}
+.m-hlines span:last-child{width:56%;opacity:.18}
+.m-cols{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;flex:1;min-height:0}
+.m-cols span{border-radius:5px;background:rgba(255,255,255,.16)}
+.mock--light .m-cols span{background:rgba(0,0,0,.1)}
+.m-cols span:first-child{background:color-mix(in srgb,var(--m-ac) 42%,transparent)}
+
+.m-menu{display:flex;flex-direction:column;align-items:center;gap:5px;flex:1;padding-top:3px}
+.m-orti{width:6px;height:6px;background:var(--m-ac);transform:rotate(45deg)}
+.m-mtitle{width:44%;height:5px;border-radius:2px;background:currentColor;opacity:.55}
+.m-mtitle+i{width:64%;height:3px;border-radius:2px;background:currentColor;opacity:.22}
+.m-line{width:78%;height:3px;border-radius:2px;background:currentColor;opacity:.28}
+.m-line.w{width:56%}
+.m-row{display:flex;gap:6px;margin-top:2px}
+.m-btn{height:13px;width:40px;border-radius:4px;background:var(--m-ac)}
+.m-btn.ghost{background:transparent;border:1px solid currentColor;opacity:.5}
+
+.m-grid{display:grid;grid-template-columns:1fr 1fr;grid-auto-rows:min-content;gap:7px;flex:1;min-height:0}
+.m-tile{display:flex;flex-direction:column;gap:3px}
+.m-tile i{height:17px;border-radius:5px;background:color-mix(in srgb,var(--m-ac) 38%,transparent)}
+.m-tile:nth-child(2) i,.m-tile:nth-child(4) i{background:rgba(255,255,255,.2)}
+.mock--light .m-tile:nth-child(2) i,.mock--light .m-tile:nth-child(4) i{background:rgba(0,0,0,.12)}
+.m-tile b{height:3px;width:74%;border-radius:2px;background:currentColor;opacity:.4}
+.m-tagline{display:flex;justify-content:space-between;align-items:center;gap:6px}
+.m-tagline i{height:3.5px;width:34%;border-radius:2px;background:currentColor;opacity:.32}
+.m-tagline u{height:11px;width:26px;border-radius:3px;background:var(--m-ac)}
+
+.m-arches{display:flex;gap:7px;flex:1;min-height:0;align-items:stretch}
+.m-arch{flex:1;border-radius:40px 40px 5px 5px;background:color-mix(in srgb,var(--m-ac) 26%,transparent);border-top:2.5px solid var(--m-ac);position:relative}
+.m-arch::after{content:"";position:absolute;inset:auto 22% 18% 22%;height:5px;border-radius:3px;background:rgba(0,0,0,.25)}
+.m-pool{height:11px;border-radius:5px;background:linear-gradient(180deg,color-mix(in srgb,var(--m-ac) 48%,transparent),transparent);border:1px solid rgba(0,0,0,.12)}
+.m-stack{display:flex;flex-direction:column;gap:5px}
+.m-stack span{height:3px;border-radius:2px;background:currentColor;opacity:.25}
+.m-stack span:nth-child(2){width:68%}
+.m-stack span:nth-child(3){width:46%}
+
+.m-soonband{
+  flex:1;display:grid;place-items:center;
+  background:repeating-linear-gradient(-45deg,rgba(255,255,255,.05) 0 8px,transparent 8px 16px);
+}
+.m-soonband b{
+  transform:rotate(-7deg);font-family:var(--font-mono);font-weight:600;font-size:.62rem;letter-spacing:.3em;
+  color:#B4AC9E;border:1.5px dashed #57504A;padding:7px 11px;border-radius:7px;background:rgba(11,10,8,.45);
+}
+
+.shot .soon-badge{
+  position:absolute;top:34px;right:-2px;z-index:4;
+  font-family:var(--font-mono);font-weight:600;font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;
+  color:#14100A;background:var(--champagne);border-radius:6px 0 0 6px;padding:5px 10px 5px 12px;
+  box-shadow:0 6px 14px -4px rgba(0,0,0,.4);
+}
+
+/* ---------- Empty state ---------- */
+.empty{
+  text-align:center;padding:70px 20px;
+  border:1px dashed var(--line-strong);border-radius:var(--radius);color:var(--ink-dim);
+}
+.empty .lucide{width:30px;height:30px;color:var(--ink-faint);margin:0 auto 14px}
+.empty h3{font-family:var(--font-display);font-weight:600;color:var(--ink);font-size:1.15rem}
+.empty p{font-size:.92rem;margin-top:6px}
+.empty .btn{margin-top:20px}
+
+/* ---------- Modal ---------- */
+.modal-overlay{
+  position:fixed;inset:0;z-index:150;display:grid;place-items:center;padding:20px;
+  background:rgba(9,8,6,.74);
+  -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
+  opacity:0;pointer-events:none;transition:opacity .28s var(--ease);
+}
+.modal-overlay.visible{opacity:1;pointer-events:auto}
+.modal{
+  width:min(880px,100%);max-height:min(86vh,900px);overflow:auto;
+  background:var(--card);color:var(--card-ink);border-radius:22px;
+  box-shadow:0 60px 120px -30px rgba(0,0,0,.8);
+  transform:translateY(14px) scale(.975);opacity:.98;
+  transition:transform .32s var(--ease);
+  position:relative;
+}
+.modal-overlay.visible .modal{transform:translateY(0) scale(1)}
+.modal-top{
+  position:sticky;top:0;z-index:8;
+  display:flex;justify-content:flex-end;
+  padding:12px 12px 0;
+  background:linear-gradient(180deg,var(--card) 58%,rgba(20,17,16,0));
+}
+.modal-close{
+  position:relative;
+  width:40px;height:40px;border-radius:11px;display:inline-flex;align-items:center;justify-content:center;
+  background:rgba(11,10,8,.68);color:#F5EFE6;
+  -webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);
+  transition:background .2s var(--ease),transform .2s var(--ease);
+}
+.modal-close:hover{background:#171310;transform:rotate(90deg)}
+.modal-close .lucide{width:18px;height:18px}
+.modal .shot-btn{cursor:default}
+.modal .shot .mock{transform:none}
+.main-shot{padding:8px 24px}
+.main-shot .shot{border-radius:14px;border:1px solid var(--card-line)}
+.modal-head{
+  display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+  padding:20px 24px 0;
+}
+.status-chip{
+  display:inline-flex;align-items:center;gap:7px;
+  font-family:var(--font-mono);font-size:.66rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+  border-radius:999px;padding:6px 12px;
+}
+.status-chip.live{color:#7BD3A9;background:rgba(63,169,124,.12);border:1px solid rgba(63,169,124,.4)}
+.status-chip.soonc{color:#E3C27D;background:rgba(237,175,60,.1);border:1px solid rgba(237,175,60,.42)}
+.modal-main{padding:14px 24px 22px}
+.modal-main h3{font-family:var(--font-display);font-weight:700;font-size:clamp(1.45rem,3vw,1.9rem);letter-spacing:-.02em;margin-top:10px}
+.modal-main .modal-desc{color:var(--card-dim);font-size:.98rem;line-height:1.66;margin-top:10px;max-width:62ch}
+.modal .tags{margin-top:16px}
+.modal .tags li{background:transparent;border-color:var(--card-line)}
+.meta-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:1px;
+  background:var(--card-line);border:1px solid var(--card-line);border-radius:14px;overflow:hidden;
+  margin-top:20px;
+}
+.meta-grid div{background:linear-gradient(165deg,rgba(30,26,22,.65),rgba(17,14,12,.95));box-shadow:inset 0 1px 0 rgba(255,255,255,.05);padding:13px 15px}
+.meta-grid dt{font-family:var(--font-mono);font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--card-dim)}
+.meta-grid dd{font-weight:600;font-size:.86rem;margin-top:5px}
+.modal-foot{
+  padding:0 24px 24px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;
+  border-top:1px solid var(--card-line);padding-top:20px;
+}
+.modal-foot .btn-dark.bp{height:50px;font-size:.95rem}
+.modal-note{font-size:.78rem;color:var(--card-dim);line-height:1.5}
+.modal-note b{color:#C7BDA9;font-weight:600}
+
+/* Scroll-reveal choreography — content stays visible without JS */
+[data-reveal].rv-in{animation:rv-rise .8s var(--ease) both;animation-delay:var(--rv-delay,0ms)}
+@keyframes rv-rise{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
+.card.is-soon[data-reveal].rv-in{opacity:.72}
+
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  .hf-card,.hf-in,.hero-eyebrow,.hero-desc,.hero-counts,.hli,.hero-cta>*,
+  [data-reveal].rv-in,.hero-glow{animation:none!important;transform:none!important;opacity:1!important}
+  .card:hover,.cat-tile:hover,.btn,.btn:hover,.btn-hero-primary:hover{transform:none!important}
+  .hf-card::before,.hf-card::after,.card::after,
+  .btn-ghost::after,.btn-hero-ghost::after,.btn-hero-primary::after{display:none!important}
+}
+
+/* Liquid Glass fallback — no backdrop-filter support: solid refined surfaces */
+@supports not ((-webkit-backdrop-filter:blur(1px)) or (backdrop-filter:blur(1px))){
+  .nav-inner{
+    background:
+      radial-gradient(240px 130px at 50% 0%,rgba(198,166,107,.08),transparent 72%),
+      linear-gradient(165deg,#1B1813,#0F0E0C) !important;
+  }
+  .nav-links{
+    background:
+      radial-gradient(320px 160px at 30% 0%,rgba(198,166,107,.07),transparent 75%),
+      linear-gradient(165deg,#1F1B16,#100F0C) !important;
+  }
+  .hero-eyebrow{
+    background:linear-gradient(120deg,rgba(198,166,107,.16),rgba(198,166,107,.05)) !important;
+  }
+  .hf-label{
+    background:linear-gradient(160deg,#262019,#12100C) !important;
+  }
+}
+
+
+/* ---------- About ---------- */
+.about-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:clamp(30px,5vw,64px);align-items:start}
+.about-copy p{color:var(--ink-dim);margin-top:14px;max-width:50ch}
+.stats{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.stats li{
+  border:1px solid var(--line);border-radius:14px;padding:14px 18px;
+  background:var(--bg-2);min-width:96px;
+}
+.stats strong{display:block;font-family:var(--font-display);font-weight:700;font-size:1.5rem;letter-spacing:-.02em}
+.stats span{display:block;font-family:var(--font-mono);font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-faint);margin-top:5px}
+.feat-list{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.feat{
+  border:1px solid var(--line);border-radius:var(--radius);padding:22px;background:var(--bg-2);
+  transition:border-color .25s var(--ease),transform .25s var(--ease);
+}
+.feat:hover{border-color:rgba(198,166,107,.35);transform:translateY(-3px)}
+.feat .fi{width:40px;height:40px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;background:rgba(198,166,107,.08);border:1px solid rgba(198,166,107,.28);margin-bottom:16px}
+.feat .fi .lucide{width:18px;height:18px;color:var(--champagne)}
+.feat h3{font-family:var(--font-display);font-weight:600;font-size:1rem}
+.feat p{color:var(--ink-dim);font-size:.86rem;margin-top:7px;line-height:1.55}
+@media (max-width:920px){.about-grid{grid-template-columns:1fr}}
+
+/* ---------- Contact ---------- */
+.contact{text-align:center}
+.contact .kicker{justify-content:center}
+.contact .kicker::before{display:none}
+.contact h2{font-family:var(--font-display);font-weight:700;font-size:clamp(1.9rem,4.4vw,3rem);letter-spacing:-.025em;margin-top:14px}
+.contact p{color:var(--ink-dim);max-width:47ch;margin:14px auto 0}
+.contact-cta{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:30px}
+.contact small{display:block;margin-top:20px;font-family:var(--font-mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint)}
+
+/* ---------- Footer ---------- */
+.site-footer{border-top:1px solid var(--line);background:#090807;padding:clamp(44px,6vh,64px) 0 30px}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:clamp(28px,5vw,60px)}
+.foot-blurb{color:var(--ink-dim);font-size:.9rem;margin-top:14px;max-width:34ch}
+.foot-h{
+  font-family:var(--font-mono);font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--ink-faint);margin-bottom:14px;
+}
+.foot-links{display:flex;flex-direction:column;gap:9px}
+.foot-links a,.foot-links button{font-size:.9rem;color:var(--ink-dim);text-align:left;transition:color .2s var(--ease)}
+.foot-links a:hover,.foot-links button:hover{color:var(--champagne)}
+.foot-note{font-size:.84rem;color:var(--ink-faint);line-height:1.6}
+.foot-bottom{
+  display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  border-top:1px solid var(--line);margin-top:clamp(30px,5vh,48px);padding-top:22px;
+}
+.foot-bottom p{font-size:.78rem;color:var(--ink-faint)}
+@media (max-width:760px){.foot-grid{grid-template-columns:1fr}}
+
+/* ============================================================
+   BODY MARKUP
+   ============================================================ */
+</style>
+</head>
+<body id="top">
+
+<a class="skip-link" href="#templates">Skip to template gallery</a>
+
+<header class="site-nav" id="siteNav">
+  <div class="container nav-inner">
+    <a class="brand" href="#top" aria-label="Vertex Studio — back to top">
+      <svg class="br-mark" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+        <rect width="32" height="32" rx="8" fill="#EFE9DF"></rect>
+        <path d="M8 10l8 13 8-13h-5.6L16 14.6 13.6 10z" fill="#171310"></path>
+      </svg>
+      <span class="brand-name">Vertex&nbsp;Studio<small>Templates</small></span>
+    </a>
+    <nav class="nav-links" id="navLinks" aria-label="Primary navigation">
+      <a href="#templates">All Templates</a>
+      <a href="#categories">Categories</a>
+      <a href="#about">About</a>
+      <a class="nav-cta-mobile" href="#contact">Get a Template</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="btn btn-primary btn-sm magnet" href="#contact">Get a Template</a>
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Open menu">
+        <i data-lucide="menu" class="icon-menu" aria-hidden="true"></i>
+        <i data-lucide="x" class="icon-close" aria-hidden="true"></i>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- ================= HERO ================= -->
+  <section class="hero" id="hero" aria-labelledby="heroTitle">
+    <div class="hero-grid-lines" aria-hidden="true"></div>
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <p class="hero-eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span>The Vertex Collection — 2026</p>
+        <h1 id="heroTitle">
+          <span class="hl"><span class="hli">Digital Experiences,</span></span>
+          <span class="hl"><span class="hli">Crafted to <em>Impress.</em></span></span>
+        </h1>
+        <p class="hero-desc">Premium, ready-to-launch website templates for modern businesses — sixteen builds across cafés, restaurants, hotels and fashion. Every template is independently hosted, live-previewable, and production-ready from day one.</p>
+        <div class="hero-cta">
+          <a class="btn btn-hero-primary magnet" href="#templates">Explore Collection <i data-lucide="arrow-right" aria-hidden="true"></i></a>
+          <a class="btn btn-hero-ghost magnet" href="#categories">Discover Categories <i data-lucide="layout-grid" aria-hidden="true"></i></a>
+        </div>
+        <ul class="hero-counts" id="heroCounts" aria-label="Collection summary"></ul>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="hf-stack" id="heroFrames"></div>
+        <span class="hero-watermark">Vertex</span>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================= CATEGORIES ================= -->
+  <section class="section" id="categories" aria-labelledby="categoriesTitle">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <p class="kicker">Sixteen Builds · Four Worlds</p>
+        <h2 id="categoriesTitle">Browse by category</h2>
+        <p class="sub">Every template is designed, built and hosted independently. Pick your world and dive straight into a live preview.</p>
+      </div>
+      <div class="cat-grid" id="catGrid"></div>
+    </div>
+  </section>
+
+  <!-- ================= GALLERY ================= -->
+  <section class="section" id="templates" tabindex="-1" aria-labelledby="galleryTitle">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <p class="kicker">The Gallery</p>
+        <h2 id="galleryTitle">All templates</h2>
+        <p class="sub">Search, filter and sort the full collection. “Open Live Preview” opens each template’s live site in a new tab — no sign-ups, no lock-in.</p>
+      </div>
+
+      <form class="toolbar" id="toolbar" data-reveal role="search" aria-label="Template filters" onsubmit="return false">
+        <div class="search-wrap">
+          <i data-lucide="search" aria-hidden="true"></i>
+          <input type="search" id="searchInput" placeholder="Search name, code, category or tag…" aria-label="Search templates by name, code, category or tag" autocomplete="off">
+        </div>
+        <div class="cat-tabs" id="catTabs" role="group" aria-label="Filter by category"></div>
+        <label class="sort-wrap" for="sortSelect">
+          <span class="sort-label">Sort</span>
+          <select id="sortSelect" aria-label="Sort templates">
+            <option value="featured" selected>Featured</option>
+            <option value="az">A–Z</option>
+            <option value="newest">Newest</option>
+          </select>
+        </label>
+      </form>
+
+      <p class="results-line" id="resultsLine" role="status" aria-live="polite"></p>
+      <div class="grid" id="grid"></div>
+
+      <div class="empty" id="emptyState" hidden>
+        <i data-lucide="search-x" aria-hidden="true"></i>
+        <h3>No templates match your search</h3>
+        <p>Try different keywords — or clear the filters to see the full collection.</p>
+        <button class="btn btn-ghost btn-md" id="clearFilters" type="button">Clear Filters</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ABOUT ================= -->
+  <section class="section" id="about" aria-labelledby="aboutTitle">
+    <div class="container about-grid">
+      <div class="about-copy">
+        <div class="section-head" style="margin-bottom:0" data-reveal>
+          <p class="kicker">Why Vertex Studio</p>
+          <h2 id="aboutTitle">Templates that ship, not demos.</h2>
+        </div>
+        <p>Vertex Studio designs premium websites around the real workflows that matter — menus and hours, reservations, lookbooks and drops, suites and concierge journeys.</p>
+        <p>Each template is a self-contained build: bundled into one Vertex Studio hub, previewable at its own URL, and ready to rebrand or extend the moment you pick it.</p>
+        <ul class="stats" data-reveal aria-label="Collection statistics">
+          <li><strong>16</strong><span>Templates</span></li>
+          <li><strong>4</strong><span>Categories</span></li>
+          <li><strong>16</strong><span>Live Now</span></li>
+          <li><strong>100%</strong><span>Responsive</span></li>
+        </ul>
+      </div>
+      <div class="feat-list" data-reveal>
+        <article class="feat">
+          <span class="fi"><i data-lucide="palette" aria-hidden="true"></i></span>
+          <h3>Crafted, not canned</h3>
+          <p>Editorial typography, real content structure and category-specific design — every build feels bespoke, because it was.</p>
+        </article>
+        <article class="feat">
+          <span class="fi"><i data-lucide="mouse-pointer-click" aria-hidden="true"></i></span>
+          <h3>High-converting UX</h3>
+          <p>Sticky navigation, preview-first discovery and booking flows designed around how customers actually decide.</p>
+        </article>
+        <article class="feat">
+          <span class="fi"><i data-lucide="rocket" aria-hidden="true"></i></span>
+          <h3>Deploy in minutes</h3>
+          <p>Static builds ready for Render and GitHub Pages — no backend, no lock-in, no infrastructure drama.</p>
+        </article>
+        <article class="feat">
+          <span class="fi"><i data-lucide="shield-check" aria-hidden="true"></i></span>
+          <h3>Production-grade code</h3>
+          <p>React + Vite bases, responsive across phone, tablet and desktop viewports before anything ships.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT ================= -->
+  <section class="section contact" id="contact" aria-labelledby="contactTitle">
+    <div class="container" data-reveal>
+      <p class="kicker">Get in Touch</p>
+      <h2 id="contactTitle">Ready for your turn?</h2>
+      <p>Need a custom build, a white-label licence, or a new category in this collection? Tell us what you’re launching.</p>
+      <div class="contact-cta">
+        <a class="btn btn-primary btn-lg" id="contactEmail" href="mailto:hello@vertexstudio.dev">Email Vertex Studio <i data-lucide="mail" aria-hidden="true"></i></a>
+        <a class="btn btn-ghost btn-lg" href="#templates">Back to the Gallery</a>
+      </div>
+      <small>Custom category builds · White-label licences · Deployment support</small>
+    </div>
+  </section>
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="foot-grid" data-reveal>
+      <div>
+        <a class="brand" href="#top" aria-label="Vertex Studio — back to top">
+          <svg class="br-mark" width="30" height="30" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+            <rect width="32" height="32" rx="8" fill="#EFE9DF"></rect>
+            <path d="M8 10l8 13 8-13h-5.6L16 14.6 13.6 10z" fill="#171310"></path>
+          </svg>
+          <span class="brand-name">Vertex&nbsp;Studio<small>Templates</small></span>
+        </a>
+        <p class="foot-blurb">A premium template marketplace by Vertex Studio — deployment-ready websites for hospitality and fashion brands, all hosted together in one hub.</p>
+      </div>
+      <div>
+        <h2 class="foot-h">Explore</h2>
+        <nav class="foot-links" aria-label="Footer navigation">
+          <a href="#templates">All Templates</a>
+          <a href="#categories">Categories</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+      <div>
+        <h2 class="foot-h">Live Previews</h2>
+        <p class="foot-note">Every “Open Live Preview” button opens the template’s live site in a new tab, straight from this hub. Add or update a template by editing the central data array below.</p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <p>© 2026 Vertex Studio. All templates are independently hosted.</p>
+      <p>Designed &amp; built by Vertex Studio · Static site, zero dependencies</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ================= MODAL ================= -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" id="modalBox">
+    <div class="modal-top">
+      <button class="modal-close" id="modalClose" type="button" aria-label="Close template details">
+        <i data-lucide="x" aria-hidden="true"></i>
+      </button>
+    </div>
+    <div id="modalContent"></div>
+  </div>
+</div>
+
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+<script>
+(function () {
+  "use strict";
+
+  /* ============================================================
+     SITE CONFIGURATION
+     ============================================================ */
+  var SITE = {
+    brand: "Vertex Studio",
+    email: "hello@vertexstudio.dev",
+    emailLabel: "hello@vertexstudio.dev"
+  };
+
+  /* ============================================================
+     CATEGORY METADATA
+     ============================================================ */
+  var CATEGORIES = [
+    { key: "Cafes",       icon: "coffee",           accent: "--red",    blurb: "Warm, characterful sites for coffee roasters, patisseries and brunch spots — menus, hours and story built in." },
+    { key: "Clothing",    icon: "shirt",            accent: "--blue",   blurb: "Editorial storefronts and lookbooks for fashion labels, streetwear drops and utility wear." },
+    { key: "Restaurants", icon: "utensils-crossed", accent: "--yellow", blurb: "Fine dining and bistro experiences with tasting menus, wine lists and reservations." },
+    { key: "Hotels",      icon: "building-2",       accent: "--green",  blurb: "Luxury stays with suites, galleries and concierge-driven booking journeys." }
+  ];
+  var CAT_ACCENT_DEEP = { Cafes: "var(--red-deep)", Clothing: "var(--blue-deep)", Restaurants: "var(--yellow-deep)", Hotels: "var(--green-deep)" };
+  var CAT_LABEL = { Cafes: "Cafés", Clothing: "Clothing", Restaurants: "Restaurants", Hotels: "Hotels" };
+  function catLabelOf(key) { return CAT_LABEL[key] || key; }
+
+  /* ============================================================
+     CENTRAL TEMPLATE DATA
+     ------------------------------------------------------------
+     IMPORTANT — PREVIEW URLs:
+     Every `previewUrl` is RELATIVE and points to that template's
+     built site inside the deploy folder (D:\Templetes\deploy).
+     The hub (this page) sits at the root and each template lives
+     in its own subfolder, e.g.
+        "brew-co/"        ->  <site>/brew-co/index.html
+     Because the links are relative, this hub + the template
+     folders ship together to ONE Render Static Site (or GitHub
+     Pages) and every preview button works with zero edits.
+     Rebuilding one template after code changes:
+        cd "<template project folder>" && npm run build
+        copy dist\* into ..\deploy\<slug>\
+     `thumbnail` is intentionally `null`: when a real screenshot
+     URL is added later it is rendered as an <img>; while it is
+     null the card renders a polished CSS mock-up, so nothing
+     ever depends on external images.
+     Adding a template? Give it a unique `code`, a mock palette,
+     `tags` (searchable) and an `added` date (used by the
+     "Newest" sort). `comingSoon: true` renders a non-clickable
+     reserved card with no preview button.
+     ============================================================ */
+  var TEMPLATES = [
+    {
+      id: "vs-cf-001", code: "VS-CF-001", name: "Brew & Co", category: "Cafes",
+      description: "A warm specialty-coffee site with roasts, brewing guides and a story-first menu — built to turn first clicks into loyal regulars.",
+      tags: ["cafe", "coffee", "espresso", "menu", "warm", "editorial", "boutique"],
+      thumbnail: null, previewUrl: "brew-co/",
+      added: "2025-03-04", featuredRank: 2, stack: "React · Vite · Tailwind · Framer Motion",
+      mock: { bg: "#EFE3D1", ink: "#3E2A1E", ac: "#A85E32", light: true }
+    },
+    {
+      id: "vs-cf-002", code: "VS-CF-002", name: "Maison Sucré", category: "Cafes",
+      description: "An elegant patisserie and bakery showcase where the pastries do the talking — counters, seasonal menus and terrace seating up front.",
+      tags: ["bakery", "patisserie", "pastries", "dessert", "elegant", "cafe"],
+      thumbnail: null, previewUrl: "maison-sucre/",
+      added: "2025-04-12", featuredRank: 5, stack: "React · Vite · Framer Motion",
+      mock: { bg: "#F6E7E3", ink: "#4A2C33", ac: "#C4758D", light: true }
+    },
+    {
+      id: "vs-cf-003", code: "VS-CF-003", name: "The Daily Grind", category: "Cafes",
+      description: "A bold, no-fuss espresso bar built around speed — daily specials, regular-perks and a late-opening menu for the after-dark crowd.",
+      tags: ["coffee", "espresso", "urban", "dark", "specials", "fast"],
+      thumbnail: null, previewUrl: "the-daily-grind/",
+      added: "2025-05-20", featuredRank: 8, stack: "React · Vite · Tailwind · Framer Motion",
+      mock: { bg: "#1B1A18", ink: "#F1EBE1", ac: "#EDAF3C", light: false }
+    },
+
+    {
+      id: "vs-cf-004", code: "VS-CF-004", name: "Sunday Social", category: "Cafes",
+      description: "A bright brunch-café experience — events, community moments and a menu that photographs beautifully on every screen.",
+      tags: ["brunch", "cafe", "bright", "events", "community", "seasonal"],
+      thumbnail: null, previewUrl: "sunday-social/",
+      added: "2025-06-28", featuredRank: 11, stack: "React · Vite · Tailwind · Framer Motion",
+      mock: { bg: "#FCF2E0", ink: "#33413A", ac: "#E8973C", light: true }
+    },
+    {
+      id: "vs-cl-001", code: "VS-CL-001", name: "ÉLAN Studio", category: "Clothing",
+      description: "A minimal designer-boutique storefront with editorial lookbooks, sharp typography and a conversion-ready product grid.",
+      tags: ["fashion", "boutique", "lookbook", "minimal", "editorial", "store"],
+      thumbnail: null, previewUrl: "elan-studio/",
+      added: "2025-07-06", featuredRank: 3, stack: "React · Vite · Tailwind · Framer Motion",
+      mock: { bg: "#121110", ink: "#EDEAE4", ac: "#D6453C", light: false }
+    },
+    {
+      id: "vs-cl-002", code: "VS-CL-002", name: "LUNA Collective", category: "Clothing",
+      description: "A night-toned collective for streetwear drops — collections, campaign stories and waitlists that quietly build hype.",
+      tags: ["streetwear", "drops", "dark", "night", "collections", "youth"],
+      thumbnail: null, previewUrl: "luna-collective/",
+      added: "2025-08-14", featuredRank: 6, stack: "React · Vite · Tailwind · Framer Motion",
+      mock: { bg: "#151221", ink: "#EDE9F5", ac: "#8B7BE8", light: false }
+    },
+    {
+      id: "vs-cl-003", code: "VS-CL-003", name: "FORM & FIT", category: "Clothing",
+      description: "A high-energy athleisure storefront — performance gear, size guides and checkout flows engineered for momentum.",
+      tags: ["activewear", "athleisure", "performance", "retail", "energy", "gear"],
+      thumbnail: null, previewUrl: "form-fit/",
+      added: "2025-09-22", featuredRank: 10, stack: "React · Vite · Framer Motion",
+      mock: { bg: "#101B20", ink: "#EAF2F0", ac: "#26B5C7", light: false }
+    },
+    {
+      id: "vs-cl-004", code: "VS-CL-004", name: "OFFGRID", category: "Clothing",
+      description: "A rugged outdoor-lifestyle catalog for utility wear — gear stories, lookbooks and trail-tested collections.",
+      tags: ["outdoor", "utility", "catalog", "rugged", "denim", "trail"],
+      thumbnail: null, previewUrl: "offgrid/",
+      added: "2025-10-30", featuredRank: 12, stack: "React · Vite · Tailwind · Framer Motion",
+      mock: { bg: "#1C231A", ink: "#E6EDE0", ac: "#7FA95B", light: false }
+    },
+    {
+      id: "vs-rs-001", code: "VS-RS-001", name: "The Grand Table", category: "Restaurants",
+      description: "A luxurious fine-dining site — tasting menus, chef's-table reservations and a candlelit evening ambiance that books tables.",
+      tags: ["fine-dining", "luxury", "tasting", "reservations", "wine", "evening"],
+      thumbnail: null, previewUrl: "the-grand-table/",
+      added: "2025-11-18", featuredRank: 4, stack: "React · Vite · Tailwind · Framer Motion",
+      mock: { bg: "#191410", ink: "#F0E6D6", ac: "#C9A34E", light: false }
+    },
+    {
+      id: "vs-rs-002", code: "VS-RS-002", name: "Café Maison", category: "Restaurants",
+      description: "A classic Parisian bistro — daily menus, wine lists and a terrace-first booking experience with timeless charm.",
+      tags: ["bistro", "parisian", "wine", "daily-menu", "terrace", "classic"],
+      thumbnail: null, previewUrl: "cafe-maison/",
+      added: "2025-12-09", featuredRank: 9, stack: "React · Vite · Tailwind · Framer Motion",
+      mock: { bg: "#20304B", ink: "#F3EFE8", ac: "#D96C4F", light: false }
+    },
+
+    {
+      id: "vs-rs-003", code: "VS-RS-003", name: "Spice Heritage", category: "Restaurants",
+      description: "A richly spiced heritage restaurant template — slow-cooked menus, spice-route stories and family recipes front and center.",
+      tags: ["indian", "spices", "heritage", "slow-cooked", "banquet", "family"],
+      thumbnail: null, previewUrl: "spice-heritage/",
+      added: "2026-01-15", featuredRank: 7, stack: "React · Vite · Framer Motion",
+      mock: { bg: "#3B130E", ink: "#FBEFE0", ac: "#E2703A", light: false }
+    },
+    {
+      id: "vs-ht-004", code: "VS-HT-004", name: "Rajmahal Heritage", category: "Hotels",
+      description: "A royal palace-hotel experience inspired by Rajasthan — imperial suites, heritage dining and white-glove concierge journeys.",
+      tags: ["hotel", "heritage", "palace", "luxury", "suites", "concierge", "booking"],
+      thumbnail: null, previewUrl: "rajmahal-heritage/",
+      added: "2026-02-21", featuredRank: 1, stack: "React · Vite · Tailwind · Framer Motion",
+      mock: { bg: "#460A13", ink: "#F6E9CE", ac: "#CFA747", light: false }
+    },
+
+    /* ---- ALL SIXTEEN TEMPLATES LIVE ----
+       Every record below is deployed: previewUrl points to that
+       template's built site inside the deploy folder. The Aurelia
+       Resorts, The Haven and Grand Meridian hotel builds joined
+       the hub alongside the other 13. Have a new template? Add a
+       record here; use `comingSoon: true` only until its build
+       lands in the deploy folder. */
+    {
+      id: "vs-rs-004", code: "VS-RS-004", name: "Urban Bites", category: "Restaurants",
+      description: "A bold fast-casual street-food one-pager — chunky menu boards, daily specials and punchy CTAs, shipped as a zero-install static page.",
+      tags: ["restaurant", "street-food", "bold", "single-page", "static", "fast"],
+      thumbnail: null, previewUrl: "urban-bites/",
+      added: "2026-03-10", featuredRank: 13, stack: "Static HTML · Tailwind · JS (CDN)",
+      mock: { bg: "#141112", ink: "#FFF6E8", ac: "#E4202C", light: false }
+    },
+    {
+      id: "vs-ht-001", code: "VS-HT-001", name: "Aurelia Resorts", category: "Hotels",
+      description: "A luxury coastal resort experience — suites, spas and horizon views, with booking search, currency-aware rates and a full gallery.",
+      tags: ["hotel", "resort", "spa", "ocean", "booking", "serif"],
+      thumbnail: null, previewUrl: "aurelia-resorts/",
+      added: "2026-03-18", featuredRank: 14, stack: "React · Vite · Tailwind · Framer Motion",
+      mock: { bg: "#0B251F", ink: "#F5EBD7", ac: "#DFBE85", light: false }
+    },
+    {
+      id: "vs-ht-002", code: "VS-HT-002", name: "The Haven", category: "Hotels",
+      description: "A boutique hideaway with quiet luxury and slow mornings — editorial gallery, journal, FAQ and a soft booking flow.",
+      tags: ["hotel", "boutique", "quiet-luxury", "editorial", "calm"],
+      thumbnail: null, previewUrl: "the-haven/",
+      added: "2026-03-26", featuredRank: 15, stack: "React · Vite · Tailwind · Framer Motion",
+      mock: { bg: "#FAF8F5", ink: "#22211F", ac: "#A89F8F", light: true }
+    },
+    {
+      id: "vs-ht-003", code: "VS-HT-003", name: "Grand Meridian", category: "Hotels",
+      description: "A grand international stay — ballrooms, banquets and skyline suites with meetings, events and corporate offers built in.",
+      tags: ["hotel", "ballroom", "skyline", "luxury", "meetings", "events"],
+      thumbnail: null, previewUrl: "grand-meridian/",
+      added: "2026-04-02", featuredRank: 16, stack: "React · Vite · Tailwind · Framer Motion",
+      mock: { bg: "#0B192C", ink: "#F1F5F9", ac: "#C59A45", light: false }
+    }
+  ];
+
+  /* ============================================================
+     HELPERS
+     ============================================================ */
+  function esc(s) {
+    return String(s == null ? "" : s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  }
+  function escAttr(s) {
+    return esc(s).replace(/"/g, "&quot;").replace(/'/g, "&#39;");
+  }
+  function shotUrl(t) {
+    if (!t.previewUrl) return "deployment pending";
+    try {
+      var u = new URL(t.previewUrl);
+      return u.host.toLowerCase().replace(/^your-/, "").replace("-site.", ".");
+    } catch (e) { return t.previewUrl.toLowerCase(); }
+  }
+  function refreshIcons() {
+    if (window.lucide && typeof window.lucide.createIcons === "function") {
+      try { window.lucide.createIcons(); } catch (e) { /* CDN unavailable: text labels still work */ }
+    }
+  }
+  function reducedMotion() {
+    return window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  }
+
+  /* ============================================================
+     CSS MOCK-UPS (zero external images — work before screenshots)
+     `thumbnail` may later hold a real screenshot URL; while it is
+     null, each card paints its own palette-based mini-site.
+     ============================================================ */
+  function mockHTML(t) {
+    var m = t.mock || { bg: "#211E1A", ink: "#9A948A", ac: "#4A463F", light: false };
+    var style = ' style="--m-bg:' + m.bg + ';--m-ink:' + m.ink + ';--m-ac:' + m.ac + '"';
+    var cls = "mock" + (m.light ? " mock--light" : "") + " mock--" +
+      (t.comingSoon ? "soon" : (t.category === "Cafes" ? "editorial" : t.category === "Clothing" ? "catalog" : t.category === "Restaurants" ? "menu" : "arches"));
+    var body;
+    var initials = esc(t.name.replace(/[^A-Za-zÀ-ÿ0-9 ]/g, "").split(/\s+/).map(function (w) { return w.charAt(0); }).join("").slice(0, 2).toUpperCase());
+
+    if (t.comingSoon) {
+      body = '<div class="m-soonband"><b>COMING SOON</b></div>';
+    } else if (t.category === "Cafes") {
+      body = '<div class="m-hero"><span class="m-mark">' + initials + '</span><span class="m-hlines"><span></span><span></span></span></div>' +
+             '<div class="m-cols"><span></span><span></span><span></span></div>';
+    } else if (t.category === "Restaurants") {
+      body = '<div class="m-menu">' +
+               '<span class="m-orti"></span><b class="m-mtitle"></b><i></i>' +
+               '<span class="m-line"></span><span class="m-line w"></span><span class="m-line"></span>' +
+               '<span class="m-row"><span class="m-btn"></span><span class="m-btn ghost"></span></span>' +
+             '</div>';
+    } else if (t.category === "Clothing") {
+      body = '<div class="m-tagline"><i></i><u></u></div>' +
+             '<div class="m-grid">' +
+               '<span class="m-tile"><i></i><b></b></span><span class="m-tile"><i></i><b></b></span>' +
+               '<span class="m-tile"><i></i><b></b></span><span class="m-tile"><i></i><b></b></span>' +
+             '</div>';
+    } else {
+      body = '<div class="m-stack"><span></span><span></span><span></span></div>' +
+             '<div class="m-arches"><span class="m-arch"></span><span class="m-arch"></span><span class="m-arch"></span></div>' +
+             '<div class="m-pool"></div>';
+    }
+
+    return '<div class="shot"' + style + '>' +
+             '<div class="chrome" aria-hidden="true">' +
+               '<span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>' +
+               '<span class="url">' + esc(shotUrl(t)) + '</span>' +
+             '</div>' +
+             '<div class="' + cls + '"' + style.replace(' style="', ' aria-hidden="true" style="') + '>' +
+               '<div class="m-nav"><span class="m-logo"></span><span class="m-dash"></span><span class="m-dash"></span><span class="m-cta"></span></div>' +
+               body +
+             '</div>' +
+             (t.comingSoon ? '<span class="soon-badge">Coming Soon</span>' : '') +
+             (t.thumbnail ? '<img class="shot-img" src="' + escAttr(t.thumbnail) + '" alt="" loading="lazy" onerror="this.remove()">' : '') +
+           '</div>';
+  }
+
+
+  /* ============================================================
+     RENDERING
+     ============================================================ */
+  function liveCount(cat) {
+    return TEMPLATES.filter(function (t) { return t.category === cat && !t.comingSoon; }).length;
+  }
+
+  function renderHeroCounts() {
+    var live = TEMPLATES.filter(function (t) { return !t.comingSoon; }).length;
+    var byCat = {};
+    TEMPLATES.forEach(function (t) { byCat[t.category] = (byCat[t.category] || 0) + 1; });
+    var html = '<li class="hc-lead"><strong>' + live + '</strong>Exclusive Templates</li>';
+    CATEGORIES.forEach(function (c) {
+      html += '<li><strong>' + byCat[c.key] + '</strong>' + esc(catLabelOf(c.key)) + '</li>';
+    });
+    document.getElementById("heroCounts").innerHTML = html;
+  }
+
+  function renderCatTiles() {
+    var html = "";
+    CATEGORIES.forEach(function (c) {
+      var total = TEMPLATES.filter(function (t) { return t.category === c.key; }).length;
+      html +=
+        '<a class="cat-tile" href="#templates" data-cat="' + escAttr(c.key) + '" data-reveal style="--cat-accent:var(' + c.accent + ')" aria-label="Show ' + escAttr(c.key) + ' templates in the gallery">' +
+          '<span class="cat-go" aria-hidden="true"><i data-lucide="' + c.icon + '"></i></span>' +
+          '<span class="cat-icon" aria-hidden="true"><i data-lucide="' + c.icon + '"></i></span>' +
+          '<h3>' + esc(catLabelOf(c.key)) + '</h3>' +
+          '<p class="cat-blurb">' + esc(c.blurb) + '</p>' +
+          '<span class="cat-meta">' +
+            '<span class="cat-count">' + total + ' Template' + (total === 1 ? '' : 's') + '</span>' +
+            '<span class="cat-live"><i data-lucide="check" aria-hidden="true"></i>' + liveCount(c.key) + ' live</span>' +
+          '</span>' +
+        '</a>';
+    });
+    document.getElementById("catGrid").innerHTML = html;
+  }
+
+  function renderTabs() {
+    var html = '<button type="button" data-cat="all" aria-pressed="true">All Templates</button>';
+    CATEGORIES.forEach(function (c) {
+      html += '<button type="button" data-cat="' + escAttr(c.key) + '" aria-pressed="false">' + esc(catLabelOf(c.key)) + '</button>';
+    });
+    document.getElementById("catTabs").innerHTML = html;
+  }
+
+  function renderHeroFrames() {
+    /* Layered editorial stack — real template data -> palette mock-ups */
+    var picks = [
+      { id: "vs-ht-001", cls: "hf-a", label: "01 — Hotel Collection" },
+      { id: "vs-rs-004", cls: "hf-b", label: "02 — Restaurant Edition" },
+      { id: "vs-cl-001", cls: "hf-c", label: "03 — Fashion House" }
+    ];
+    var html = "";
+    picks.forEach(function (p) {
+      var t = TEMPLATES.find(function (x) { return x.id === p.id; });
+      if (t) html +=
+        '<figure class="hf-card ' + p.cls + '">' +
+          '<div class="hf-in">' + mockHTML(t) + '</div>' +
+          '<figcaption class="hf-label">' + esc(p.label) + '</figcaption>' +
+        '</figure>';
+    });
+    document.getElementById("heroFrames").innerHTML = html;
+  }
+
+  /* ---------- Cards ---------- */
+  function cardHTML(t) {
+    var soon = t.comingSoon === true;
+    var catAccent = 'var(--' + (CATEGORIES.find(function (c) { return c.key === t.category; }) || { accent: "--red" }).accent + ')';
+    var deep = CAT_ACCENT_DEEP[t.category] || "var(--red-deep)";
+    var style = ' style="--cat-accent:' + catAccent + ';--cat-accent-deep:' + deep + '"';
+
+    var shotOpen = soon
+      ? '<div class="shot-wrap">'
+      : '<button type="button" class="shot-btn" data-open-modal="' + escAttr(t.id) + '" aria-label="View details of ' + escAttr(t.name) + ' (' + escAttr(t.code) + ')">';
+    var shotClose = soon ? '</div>' : '</button>';
+
+    var foot = soon
+      ? '<div class="card-foot"><span class="soon-pill" aria-label="Not available yet"><i data-lucide="clock" aria-hidden="true"></i>Launching Soon</span></div>'
+      : '<div class="card-foot">' +
+          '<a class="btn btn-dark" href="' + escAttr(t.previewUrl) + '" target="_blank" rel="noopener noreferrer" aria-label="Open live preview of ' + escAttr(t.name) + ' in a new tab">' +
+            'Open Live Preview<i data-lucide="arrow-up-right" aria-hidden="true"></i>' +
+          '</a>' +
+          '<button type="button" class="icon-btn" data-open-modal="' + escAttr(t.id) + '" aria-label="View details of ' + escAttr(t.name) + '">' +
+            '<i data-lucide="maximize-2" aria-hidden="true"></i>' +
+          '</button>' +
+        '</div>';
+
+    return (
+      '<article class="card' + (soon ? " is-soon" : "") + '"' + style + ' data-reveal data-id="' + escAttr(t.id) + '">' +
+        shotOpen + mockHTML(t) + shotClose +
+        '<div class="card-body">' +
+          '<div class="card-top">' +
+            '<span class="code-chip">' + esc(t.code) + '</span>' +
+            '<span class="cat-pill"><span class="dot" aria-hidden="true"></span>' + esc(t.category) + '</span>' +
+          '</div>' +
+          '<h3 class="card-name">' + esc(t.name) + '</h3>' +
+          '<p class="card-desc">' + esc(t.description) + '</p>' +
+          '<ul class="tags" aria-label="Tags">' + t.tags.map(function (tag) { return '<li>#' + esc(tag) + '</li>'; }).join("") + '</ul>' +
+          foot +
+        '</div>' +
+      '</article>'
+    );
+  }
+
+  /* ============================================================
+     STATE + FILTERING
+     ============================================================ */
+  var state = { query: "", category: "all", sort: "featured" };
+
+  function filtered() {
+    var q = state.query.trim().toLowerCase();
+    var tokens = q.split(/\s+/).filter(Boolean);
+    var list = TEMPLATES.filter(function (t) {
+      if (state.category !== "all" && t.category !== state.category) return false;
+      if (!tokens.length) return true;
+      var hay = (t.name + " " + t.code + " " + t.category + " " + t.tags.join(" ")).toLowerCase();
+      return tokens.every(function (tok) { return hay.indexOf(tok) !== -1; });
+    });
+    if (state.sort === "az") {
+      list = list.slice().sort(function (a, b) { return a.name.toLowerCase().localeCompare(b.name.toLowerCase()); });
+    } else if (state.sort === "newest") {
+      list = list.slice().sort(function (a, b) { return (b.added || "").localeCompare(a.added || ""); });
+    } else {
+      list = list.slice().sort(function (a, b) { return (a.featuredRank || 99) - (b.featuredRank || 99); });
+    }
+    return list;
+  }
+
+  function renderGrid() {
+    var list = filtered();
+    document.getElementById("grid").innerHTML = list.map(cardHTML).join("");
+    var emptyEl = document.getElementById("emptyState");
+    emptyEl.hidden = list.length > 0;
+    var line = document.getElementById("resultsLine");
+    var catLabel = state.category === "all" ? "all categories" : catLabelOf(state.category);
+    line.innerHTML = "<b>" + list.length + "</b> of <b>" + TEMPLATES.length + "</b> templates — " + esc(catLabel) +
+      (state.query ? " · search: “" + esc(state.query) + "”" : "");
+    refreshIcons();
+  }
+
+  function apply() { renderGrid(); observeReveals(); }
+
+
+  /* ============================================================
+     MODAL (keyboard accessible: Esc closes, Tab is trapped)
+     ============================================================ */
+  var lastFocus = null;
+  var overlay = null;
+
+  function modalHTML(t) {
+    var soon = t.comingSoon === true;
+    var status = soon
+      ? '<span class="status-chip soonc"><i data-lucide="clock" aria-hidden="true"></i>Coming Soon</span>'
+      : '<span class="status-chip live"><i data-lucide="radio" aria-hidden="true"></i>Live Preview</span>';
+    var foot = soon
+      ? '<span class="soon-pill" style="flex:none;padding:0 22px;"><i data-lucide="clock" aria-hidden="true"></i>Launching Soon</span>'
+      : '<a class="btn btn-dark bp" href="' + escAttr(t.previewUrl) + '" target="_blank" rel="noopener noreferrer">' +
+          'Open Live Preview<i data-lucide="arrow-up-right" aria-hidden="true"></i>' +
+        '</a>';
+    return (
+      '<div class="modal-head">' +
+        '<span class="code-chip" style="background:rgba(23,19,16,.08)">' + esc(t.code) + '</span>' +
+        '<span class="cat-pill"><span class="dot" aria-hidden="true"></span>' + esc(t.category) + '</span>' +
+        status +
+      '</div>' +
+      '<div class="main-shot">' + mockHTML(t) + '</div>' +
+      '<div class="modal-main">' +
+        '<h3 id="modalTitle">' + esc(t.name) + '</h3>' +
+        '<p class="modal-desc" id="modalDesc">' + esc(t.description) + '</p>' +
+        '<ul class="tags" aria-label="Tags">' + t.tags.map(function (tag) { return '<li>#' + esc(tag) + '</li>'; }).join("") + '</ul>' +
+        '<dl class="meta-grid">' +
+          '<div><dt>Category</dt><dd>' + esc(t.category) + '</dd></div>' +
+          '<div><dt>Template Code</dt><dd>' + esc(t.code) + '</dd></div>' +
+          '<div><dt>Stack</dt><dd>' + esc(t.stack) + '</dd></div>' +
+          '<div><dt>Hosted On</dt><dd>' + (soon ? "Pending deployment" : "Vertex Studio hub") + '</dd></div>' +
+        '</dl>' +
+      '</div>' +
+      '<div class="modal-foot">' +
+        foot +
+        '<p class="modal-note">' + (soon ? "This build is still in production — the preview URL ships with its release." : "Opens in a new tab · <b>" + esc(shotUrl(t)) + "</b>") + '</p>' +
+      '</div>'
+    );
+  }
+
+  function openModal(id, opener) {
+    var t = TEMPLATES.find(function (x) { return x.id === id; });
+    if (!t) return;
+    var box = document.getElementById("modalBox");
+    box.setAttribute("aria-labelledby", "modalTitle");
+    box.setAttribute("aria-describedby", "modalDesc");
+    if (t.description) box.setAttribute("aria-describedby", "modalDesc");
+    document.getElementById("modalContent").innerHTML = modalHTML(t);
+    overlay = document.getElementById("modalOverlay");
+    lastFocus = opener || document.activeElement;
+    overlay.classList.add("visible");
+    document.body.classList.add("modal-open");
+    refreshIcons();
+    var closeBtn = document.getElementById("modalClose");
+    if (closeBtn) closeBtn.focus();
+    box.scrollTop = 0;
+  }
+
+  function closeModal() {
+    if (!overlay) return;
+    overlay.classList.remove("visible");
+    document.body.classList.remove("modal-open");
+    if (lastFocus && typeof lastFocus.focus === "function") lastFocus.focus();
+    lastFocus = null;
+  }
+
+  function trapModalTab(e) {
+    if (!document.body.classList.contains("modal-open")) return;
+    if (e.key === "Escape") { e.preventDefault(); closeModal(); return; }
+    if (e.key !== "Tab" || !overlay) return;
+    var focusables = overlay.querySelectorAll('a[href], button:not([disabled])');
+    if (!focusables.length) return;
+    var first = focusables[0], last = focusables[focusables.length - 1];
+    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+  }
+
+  /* ============================================================
+     NAV / EVENTS / INIT
+     ============================================================ */
+  function bindEvents() {
+    /* Sticky nav shading */
+    var nav = document.getElementById("siteNav");
+    function onScroll() { nav.classList.toggle("scrolled", window.scrollY > 8); }
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+
+    /* Mobile menu */
+    var toggle = document.getElementById("navToggle");
+    toggle.addEventListener("click", function () {
+      var open = document.body.classList.toggle("nav-open");
+      toggle.setAttribute("aria-expanded", open ? "true" : "false");
+      toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    });
+    document.querySelectorAll("#navLinks a").forEach(function (a) {
+      a.addEventListener("click", function () {
+        document.body.classList.remove("nav-open");
+        toggle.setAttribute("aria-expanded", "false");
+      });
+    });
+
+    /* Category tiles → set filter + jump to gallery */
+    document.querySelectorAll(".cat-tile").forEach(function (tile) {
+      tile.addEventListener("click", function () {
+        setCategory(tile.getAttribute("data-cat"));
+      });
+    });
+
+    /* Search */
+    var search = document.getElementById("searchInput");
+    var debounceId = null;
+    search.addEventListener("input", function () {
+      window.clearTimeout(debounceId);
+      if (reducedMotion()) { state.query = search.value; apply(); return; }
+      debounceId = window.setTimeout(function () { state.query = search.value; apply(); }, 90);
+    });
+
+    /* Category tabs */
+    document.getElementById("catTabs").addEventListener("click", function (e) {
+      var btn = e.target.closest("button[data-cat]");
+      if (btn) setCategory(btn.getAttribute("data-cat"));
+    });
+
+    /* Sort */
+    document.getElementById("sortSelect").addEventListener("change", function (e) {
+      state.sort = e.target.value;
+      apply();
+    });
+
+    /* Clear filters */
+    document.getElementById("clearFilters").addEventListener("click", function () {
+      state.query = "";
+      document.getElementById("searchInput").value = "";
+      setCategory("all");
+      document.getElementById("templates").focus();
+    });
+
+    /* Card + modal interactions (delegated) */
+    document.getElementById("grid").addEventListener("click", function (e) {
+      var opener = e.target.closest("[data-open-modal]");
+      if (opener) openModal(opener.getAttribute("data-open-modal"), opener);
+    });
+
+    var overlayEl = document.getElementById("modalOverlay");
+    overlayEl.addEventListener("click", function (e) { if (e.target === overlayEl) closeModal(); });
+    document.getElementById("modalClose").addEventListener("click", closeModal);
+    document.addEventListener("keydown", trapModalTab);
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && document.body.classList.contains("nav-open")) {
+        document.body.classList.remove("nav-open");
+        document.getElementById("navToggle").setAttribute("aria-expanded", "false");
+        document.getElementById("navToggle").focus();
+      }
+    });
+  }
+
+  function setCategory(cat) {
+    state.category = cat || "all";
+    document.querySelectorAll("#catTabs button[data-cat]").forEach(function (b) {
+      b.setAttribute("aria-pressed", b.getAttribute("data-cat") === state.category ? "true" : "false");
+    });
+    apply();
+    var target = document.getElementById("templates");
+    if (target && reducedMotion()) {
+      target.scrollIntoView();
+      if (history.replaceState) history.replaceState(null, "", "#templates");
+    }
+    /* Smooth-scroll browsers use the anchor default; fall back for tiles clicked from afar */
+  }
+
+  /* ============================================================
+     SCROLL REVEALS + HERO EFFECTS (vanilla — no dependencies)
+     ============================================================ */
+  var revealObserver = null;
+  function observeReveals() {
+    if (!("IntersectionObserver" in window) || reducedMotion()) return;
+    if (!revealObserver) {
+      revealObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          if (en.isIntersecting) {
+            en.target.classList.add("rv-in");
+            revealObserver.unobserve(en.target);
+          }
+        });
+      }, { threshold: 0.04, rootMargin: "0px 0px -6% 0px" });
+    }
+    var nodes = document.querySelectorAll("[data-reveal]:not(.rv-in)");
+    for (var i = 0; i < nodes.length; i++) {
+      var el = nodes[i];
+      if (el.__rv) continue;
+      el.__rv = true;
+      /* Column-wise stagger inside grids, single items get no extra delay */
+      var idx = Array.prototype.indexOf.call(el.parentNode.children, el);
+      if (idx > 0) el.style.setProperty("--rv-delay", (idx % 4) * 90 + "ms");
+      revealObserver.observe(el);
+    }
+  }
+
+  function initHeroEffects() {
+    var hero = document.getElementById("hero");
+    if (!hero || reducedMotion()) return;
+    var fine = window.matchMedia && window.matchMedia("(hover:hover) and (pointer:fine)").matches;
+    var stack = document.getElementById("heroFrames");
+
+    /* Mouse-following ambient light (desktop pointers only) */
+    if (fine && stack) {
+      var glow = document.createElement("div");
+      glow.className = "hero-glow";
+      hero.insertBefore(glow, hero.firstChild);
+      var tx = 0, ty = 0, cx = 0, cy = 0, raf = 0, gw = 0, gh = 0;
+      var step = function () {
+        cx += (tx - cx) * .07; cy += (ty - cy) * .07;
+        glow.style.transform = "translate3d(" + Math.round(cx) + "px," + Math.round(cy) + "px,0)";
+        if (Math.abs(tx - cx) + Math.abs(ty - cy) > 2) raf = requestAnimationFrame(step); else raf = 0;
+      };
+      hero.addEventListener("pointermove", function (e) {
+        if (!gw) { gw = glow.offsetWidth / 2; gh = glow.offsetHeight / 2; }
+        var r = hero.getBoundingClientRect();
+        tx = e.clientX - r.left - gw; ty = e.clientY - r.top - gh;
+        if (!raf) raf = requestAnimationFrame(step);
+      });
+      hero.addEventListener("pointerleave", function () { tx = 0; ty = 0; if (!raf) raf = requestAnimationFrame(step); });
+    }
+
+    /* Subtle scroll parallax on the mock-up stack */
+    if (stack) {
+      var ticking = false;
+      window.addEventListener("scroll", function () {
+        if (ticking) return; ticking = true;
+        requestAnimationFrame(function () {
+          var y = window.scrollY;
+          if (y < 1200) stack.style.transform = "translate3d(0," + (y * 0.07).toFixed(1) + "px,0)";
+          ticking = false;
+        });
+      }, { passive: true });
+    }
+
+    /* Magnetic hover for hero CTAs (desktop pointers only) */
+    if (fine) {
+      document.querySelectorAll(".magnet").forEach(function (btn) {
+        btn.addEventListener("pointermove", function (e) {
+          var r = btn.getBoundingClientRect();
+          var dx = (e.clientX - r.left - r.width / 2) * .16;
+          var dy = (e.clientY - r.top - r.height / 2) * .22;
+          if (Math.abs(dx) < 5) dx = 0;
+          if (Math.abs(dy) < 3) dy = 0;
+          btn.style.transform = "translate(" + dx.toFixed(1) + "px," + dy.toFixed(1) + "px)";
+        });
+        btn.addEventListener("pointerleave", function () { btn.style.transform = ""; });
+      });
+    }
+  }
+
+  /* Liquid Glass — one delegated listener drives cursor light (--gx/--gy) on every glass host.
+     Delegated so re-rendered cards are covered automatically. Hover-gated layers ignore stale vars. */
+  function initGlassReflections() {
+    if (reducedMotion()) return;
+    if (!window.matchMedia || !window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
+    var HOSTS = ".nav-inner,.card,.cat-tile,.hf-card,.btn-hero-ghost,.btn-ghost,.cat-tabs button,.hero-eyebrow,.search-wrap";
+    var last = null;
+    document.addEventListener("pointermove", function (e) {
+      var t = e.target;
+      if (!t || !t.closest) return;
+      var el = t.closest(HOSTS);
+      if (last && (el !== last || !el)) {
+        last.style.removeProperty("--gx");
+        last.style.removeProperty("--gy");
+        last = null;
+      }
+      if (!el) return;
+      var r = el.getBoundingClientRect();
+      if (!r.width || !r.height) return;
+      el.style.setProperty("--gx", (((e.clientX - r.left) / r.width) * 100).toFixed(1) + "%");
+      el.style.setProperty("--gy", (((e.clientY - r.top) / r.height) * 100).toFixed(1) + "%");
+      last = el;
+    }, { passive: true });
+  }
+
+  function init() {
+    document.getElementById("contactEmail").innerHTML =
+      'Email ' + esc(SITE.brand) + ' <i data-lucide="mail" aria-hidden="true"></i>';
+    document.getElementById("contactEmail").href = "mailto:" + SITE.email + "?subject=" + encodeURIComponent("Template enquiry — " + SITE.brand);
+    renderHeroCounts();
+    renderHeroFrames();
+    renderCatTiles();
+    renderTabs();
+    bindEvents();
+    apply();
+    initHeroEffects();
+    initGlassReflections();
+    refreshIcons();
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
+  } else {
+    init();
+  }
+  window.addEventListener("load", refreshIcons);
+})();
+</script>
+</body>
+</html>
+
