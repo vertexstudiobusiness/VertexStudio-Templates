@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-bg: #FAF8F5;
+    --color-fg: #22211F;
+  }
+
+  html {
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #FAF8F5;
+    color: #22211F;
+    overflow-x: hidden;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Modern Web Guidance: prevent page scroll under modal dialog */
+  dialog:modal {
+    overscroll-behavior: contain;
+  }
+  dialog::backdrop {
+    overflow: hidden;
+    overscroll-behavior: contain;
+  }
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #FAF8F5;
+}
+::-webkit-scrollbar-thumb {
+  background: #D8D2C6;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #A89F8F;
+}
+
+/* Mobile tap & touch adjustments */
+@media (max-width: 768px) {
+  button, a, input, select, textarea {
+    touch-action: manipulation;
+  }
+}
+
+/* Editorial line clamps & helper styles */
+.text-balance {
+  text-wrap: balance;
+}
+
+.text-pretty {
+  text-wrap: pretty;
+}
+
+.editorial-shadow {
+  box-shadow: 0 20px 40px -15px rgba(34, 33, 31, 0.07);
+}
+
+.editorial-shadow-lg {
+  box-shadow: 0 30px 60px -20px rgba(34, 33, 31, 0.12);
+}
+
+.glass-nav {
+  background: rgba(250, 248, 245, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}

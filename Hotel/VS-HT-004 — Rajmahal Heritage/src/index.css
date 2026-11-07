@@ -1,0 +1,136 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+
+  body {
+    background-color: #FDFAF6;
+    color: #231A17;
+    overflow-x: hidden;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+
+  /* Custom royal scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #1C110C;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #5A0E18;
+    border-radius: 4px;
+    border: 1px solid #CFA747;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #8A172A;
+  }
+}
+
+@layer utilities {
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .scrollbar-none {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+
+  /* Subtle Jaali (geometric lattice) SVG pattern overlay */
+  .bg-jaali-pattern {
+    background-image: radial-gradient(rgba(184, 143, 40, 0.15) 1px, transparent 1px), radial-gradient(rgba(70, 10, 19, 0.08) 1px, transparent 1px);
+    background-size: 24px 24px;
+    background-position: 0 0, 12px 12px;
+  }
+
+  .bg-jaali-dark {
+    background-image: radial-gradient(rgba(220, 190, 113, 0.12) 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+
+  /* Traditional Rajput & Mughal cusped arch shape */
+  .royal-arch-top {
+    clip-path: ellipse(75% 100% at 50% 100%);
+  }
+
+  .royal-arch-portal {
+    border-top-left-radius: 50% 35%;
+    border-top-right-radius: 50% 35%;
+  }
+
+  .royal-cusped-arch {
+    border-top-left-radius: 45% 30%;
+    border-top-right-radius: 45% 30%;
+  }
+
+  /* Shimmering gold text */
+  .gold-gradient-text {
+    background: linear-gradient(135deg, #ECC876 0%, #F5E5BE 35%, #D4AF37 70%, #9B7829 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .maroon-gradient-text {
+    background: linear-gradient(135deg, #8A172A 0%, #5A0E18 50%, #28040A 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* Royal ornamental filigree border */
+  .royal-border-gold {
+    border: 1px solid rgba(207, 167, 71, 0.35);
+    outline: 1px solid rgba(207, 167, 71, 0.15);
+    outline-offset: 4px;
+  }
+
+  .royal-card-shadow {
+    box-shadow: 0 12px 35px -8px rgba(40, 4, 10, 0.08), 0 4px 12px -2px rgba(184, 143, 40, 0.06);
+  }
+
+  .royal-card-shadow-hover {
+    box-shadow: 0 20px 45px -10px rgba(70, 10, 19, 0.15), 0 6px 16px -2px rgba(184, 143, 40, 0.12);
+  }
+
+  /* Animations for smooth mobile interactions */
+  .animate-slide-up {
+    animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.25s ease-out forwards;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

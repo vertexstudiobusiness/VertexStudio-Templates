@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Cormorant Garamond", "Newsreader", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+
+  --color-cream-50: #FCFAF7;
+  --color-cream-100: #F7F3EB;
+  --color-cream-200: #EFE8DC;
+  --color-cream-300: #E2D7C5;
+  --color-cream-400: #CBB99F;
+
+  --color-coffee-950: #1C1511;
+  --color-coffee-900: #291F18;
+  --color-coffee-800: #3E3027;
+  --color-coffee-700: #5C473A;
+  --color-coffee-600: #7E6251;
+  --color-coffee-500: #A2826D;
+
+  --color-olive-900: #293327;
+  --color-olive-800: #3D4A3A;
+  --color-olive-700: #4F5E4B;
+  --color-olive-600: #6B7C67;
+  --color-olive-500: #889983;
+  --color-olive-200: #D8DFD6;
+  --color-olive-100: #ECF0EA;
+
+  --color-terracotta: #B86749;
+  --color-terracotta-light: #F2E4DE;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-cream-200);
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  body {
+    background-color: var(--color-cream-50);
+    color: var(--color-coffee-900);
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+  }
+
+  h1, h2, h3, h4, .font-editorial {
+    font-family: var(--font-serif);
+  }
+
+  /* Prevent automatic iOS font zoom on input focus */
+  input, select, textarea {
+    font-size: 16px;
+  }
+  @media (min-width: 640px) {
+    input, select, textarea {
+      font-size: 0.875rem; /* 14px */
+    }
+  }
+}
+
+/* Modern Web Guidance Compliance for Native Dialog & Backdrops */
+dialog:modal {
+  overscroll-behavior: contain;
+}
+
+dialog::backdrop {
+  overflow: hidden;
+  overscroll-behavior: contain;
+  background: rgba(28, 21, 17, 0.75);
+  backdrop-filter: blur(8px);
+}
+
+/* Smooth Touch-Friendly Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F7F3EB;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CBB99F;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #A2826D;
+}
+
+/* Hide scrollbar for clean horizontal swipe on mobile */
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

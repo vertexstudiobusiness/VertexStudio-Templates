@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  
+  --color-forest-950: #05130f;
+  --color-forest-900: #0b251f;
+  --color-forest-850: #0f2e27;
+  --color-forest-800: #143d34;
+  --color-forest-700: #1c5246;
+  --color-forest-600: #266b5c;
+  
+  --color-gold-200: #f5ebd7;
+  --color-gold-300: #ead8b7;
+  --color-gold-400: #dfbe85;
+  --color-gold-500: #c5a880;
+  --color-gold-600: #b38f5c;
+  --color-gold-700: #937345;
+
+  --color-ivory-50: #fcfbf9;
+  --color-ivory-100: #f7f4ee;
+  --color-ivory-200: #efe9de;
+  --color-sand-50: #faf7f2;
+  --color-sand-100: #f4efe6;
+  --color-sand-200: #e8dfd1;
+  --color-sand-300: #dacdbd;
+}
+
+/* Modern Web Guidance: Native Dialog & Backdrop Scroll Containment */
+dialog:modal {
+  overscroll-behavior: contain;
+}
+
+dialog::backdrop {
+  overflow: hidden;
+  overscroll-behavior: contain;
+  background-color: rgba(5, 19, 15, 0.78);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-sans);
+  background-color: #0b251f;
+  color: #1a2420;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: #f7f4ee;
+}
+
+/* Luxury typography helper */
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #0b251f;
+}
+::-webkit-scrollbar-thumb {
+  background: #c5a880;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #dfbe85;
+}
+
+/* Shimmer animation for luxury gold accents */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #f5ebd7 0%, #dfbe85 35%, #c5a880 70%, #ead8b7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-border-gradient {
+  border-image: linear-gradient(to right, rgba(197, 168, 128, 0.2), rgba(197, 168, 128, 0.8), rgba(197, 168, 128, 0.2)) 1;
+}

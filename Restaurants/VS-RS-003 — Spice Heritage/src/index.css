@@ -1,0 +1,186 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    @apply bg-ivory text-ink font-body antialiased;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    @apply bg-saffron-500/80 text-burgundy-900;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #efe5d2;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #c09a4e;
+    border-radius: 8px;
+    border: 2px solid #efe5d2;
+  }
+
+  img {
+    -webkit-user-drag: none;
+  }
+}
+
+@layer components {
+  /* ---- Layout helpers ---- */
+  .container-x {
+    @apply mx-auto w-full max-w-7xl px-5 sm:px-8 md:px-10;
+  }
+
+  .section-pad {
+    @apply py-16 sm:py-20 md:py-28;
+  }
+
+  /* ---- Typography accents ---- */
+  .eyebrow {
+    @apply font-body text-[11px] sm:text-xs font-medium uppercase tracking-luxe;
+  }
+
+  .gold-gradient-text {
+    background: linear-gradient(105deg, #e8b455 0%, #d3af62 40%, #f2ddab 55%, #c9862b 75%, #e8b455 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .shimmer-line {
+    background: linear-gradient(90deg, transparent, rgba(211, 175, 98, 0.65), transparent);
+    background-size: 50% 100%;
+    background-repeat: no-repeat;
+  }
+
+  /* ---- Buttons ---- */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2.5 rounded-full font-body font-medium
+           transition-all duration-300 ease-luxe select-none whitespace-nowrap
+           focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-400 focus-visible:ring-offset-2;
+    min-height: 48px;
+    padding-left: 1.75rem;
+    padding-right: 1.75rem;
+  }
+
+  .btn-gold {
+    @apply btn bg-gradient-to-b from-saffron-400 to-saffron-600 text-burgundy-900 shadow-gold
+           hover:from-saffron-300 hover:to-saffron-500 hover:-translate-y-0.5 active:translate-y-0;
+  }
+
+  .btn-outline-light {
+    @apply btn border border-ivory/40 text-ivory hover:border-gold-400 hover:text-gold-300
+           hover:bg-gold-400/5 backdrop-blur-sm;
+  }
+
+  .btn-outline-dark {
+    @apply btn border border-burgundy-700/30 text-burgundy-700 hover:border-gold-600
+           hover:text-gold-600 hover:bg-gold-400/10;
+  }
+
+  .btn-dark {
+    @apply btn bg-burgundy-700 text-ivory hover:bg-burgundy-600 hover:-translate-y-0.5 shadow-lux;
+  }
+
+  /* ---- Chip filters ---- */
+  .chip {
+    @apply inline-flex items-center gap-2 rounded-full border px-4 py-2.5 text-[13px] font-medium
+           tracking-wide transition-all duration-300 ease-luxe whitespace-nowrap select-none;
+    min-height: 44px;
+  }
+
+  .chip-active {
+    @apply border-burgundy-700 bg-burgundy-700 text-ivory shadow-card;
+  }
+
+  .chip-idle {
+    @apply border-ink/15 bg-cream text-ink/75 hover:border-gold-500 hover:text-burgundy-700;
+  }
+
+  /* ---- Form fields ---- */
+  .field-label {
+    @apply mb-1.5 block text-[11px] font-medium uppercase tracking-luxe text-burgundy-800/80;
+  }
+
+  .field {
+    @apply block w-full rounded-xl border border-ink/15 bg-white/70 px-4 text-[15px] text-ink
+           placeholder:text-ink/35 transition-colors duration-200
+           focus:border-gold-500 focus:outline-none focus:ring-2 focus:ring-gold-400/40;
+    min-height: 50px;
+  }
+
+  .field-error {
+    @apply border-brick focus:border-brick focus:ring-brick/30;
+  }
+
+  .field-msg {
+    @apply mt-1.5 text-[12.5px] font-medium text-brick;
+  }
+
+  /* ---- Mughal arch image frame ---- */
+  .arch {
+    border-radius: 999px 999px 14px 14px;
+  }
+
+  /* ---- Jali lattice patterns (Indian-inspired decorative backgrounds) ---- */
+  .jali-dark,
+  .jali-light {
+    background-repeat: repeat;
+    background-size: 92px 92px;
+  }
+
+  .jali-dark {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='92' height='92' viewBox='0 0 92 92'%3E%3Cg fill='none' stroke='%23E3C57F' stroke-opacity='0.07' stroke-width='1.1'%3E%3Cpath d='M46 10 L66 30 L82 30 L82 46 L66 66 L46 82 L26 66 L10 46 L10 30 L26 30 Z'/%3E%3Cpath d='M26 30 L66 66 M66 30 L26 66'/%3E%3Ccircle cx='46' cy='46' r='6'/%3E%3Ccircle cx='0' cy='0' r='5'/%3E%3Ccircle cx='92' cy='0' r='5'/%3E%3Ccircle cx='0' cy='92' r='5'/%3E%3Ccircle cx='92' cy='92' r='5'/%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  .jali-light {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='92' height='92' viewBox='0 0 92 92'%3E%3Cg fill='none' stroke='%235C1A2C' stroke-opacity='0.055' stroke-width='1.1'%3E%3Cpath d='M46 10 L66 30 L82 30 L82 46 L66 66 L46 82 L26 66 L10 46 L10 30 L26 30 Z'/%3E%3Cpath d='M26 30 L66 66 M66 30 L26 66'/%3E%3Ccircle cx='46' cy='46' r='6'/%3E%3Ccircle cx='0' cy='0' r='5'/%3E%3Ccircle cx='92' cy='0' r='5'/%3E%3Ccircle cx='0' cy='92' r='5'/%3E%3Ccircle cx='92' cy='92' r='5'/%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  /* Hide scrollbars on horizontal scroll-snap rows (mobile carousels / chip rails) */
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@layer utilities {
+  .text-shadow-lux {
+    text-shadow: 0 2px 24px rgba(20, 6, 10, 0.55);
+  }
+
+  .grain::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.5;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .animate-kenburns,
+  .animate-floaty,
+  .animate-spin-slow,
+  .animate-shimmer {
+    animation: none !important;
+  }
+}

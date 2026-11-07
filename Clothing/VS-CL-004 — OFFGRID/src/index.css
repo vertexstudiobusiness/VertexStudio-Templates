@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+    overflow-x: hidden;
+  }
+
+  body {
+    background-color: #08080a;
+    color: #f4f4f0;
+    font-family: 'Space Grotesk', sans-serif;
+    overflow-x: hidden;
+    width: 100%;
+    min-height: 100vh;
+    touch-action: manipulation;
+  }
+
+  /* Safe Area for Mobile Notch / Home Indicators */
+  .safe-area-pb {
+    padding-bottom: max(0.5rem, env(safe-area-inset-bottom, 0px));
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #08080a;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #2b2d35;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #ff4400;
+  }
+}
+
+@layer utilities {
+  .text-stroke {
+    -webkit-text-stroke: 1px rgba(244, 244, 240, 0.4);
+    color: transparent;
+  }
+  .text-stroke-orange {
+    -webkit-text-stroke: 1px #ff4400;
+    color: transparent;
+  }
+  .text-stroke-thick {
+    -webkit-text-stroke: 2px rgba(244, 244, 240, 0.8);
+    color: transparent;
+  }
+  .bg-noise {
+    background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 0);
+    background-size: 24px 24px;
+  }
+  .bg-grid-pattern {
+    background-size: 40px 40px;
+    background-image: 
+      linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* Stencil barcode line effect */
+.barcode-strip {
+  background: repeating-linear-gradient(
+    90deg,
+    #f4f4f0,
+    #f4f4f0 2px,
+    transparent 2px,
+    transparent 4px,
+    #f4f4f0 4px,
+    #f4f4f0 7px,
+    transparent 7px,
+    transparent 9px,
+    #f4f4f0 9px,
+    #f4f4f0 13px,
+    transparent 13px,
+    transparent 15px
+  );
+}
+
+.barcode-strip-dark {
+  background: repeating-linear-gradient(
+    90deg,
+    #08080a,
+    #08080a 2px,
+    transparent 2px,
+    transparent 4px,
+    #08080a 4px,
+    #08080a 7px,
+    transparent 7px,
+    transparent 9px,
+    #08080a 9px,
+    #08080a 13px,
+    transparent 13px,
+    transparent 15px
+  );
+}

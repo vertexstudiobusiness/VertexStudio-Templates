@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: 'Cormorant Garamond', 'Bodoni Moda', Georgia, serif;
+  --font-display: 'Bodoni Moda', 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+
+  --color-obsidian: #0c0b0a;
+  --color-noir: #141311;
+  --color-charcoal: #1c1a17;
+  --color-charcoal-light: #282521;
+  --color-stone-muted: #3a3630;
+  --color-champagne: #c5a880;
+  --color-champagne-light: #e4d2b8;
+  --color-champagne-dark: #9e8159;
+  --color-ivory: #faf7f2;
+  --color-ecru: #f0e9df;
+  --color-linen: #ded6c9;
+  --color-taupe: #948b7e;
+  --color-taupe-light: #b3a99b;
+}
+
+@layer base {
+  * {
+    border-color: rgba(255, 255, 255, 0.08);
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  body {
+    background-color: #0c0b0a;
+    color: #faf7f2;
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+  }
+
+  /* Custom scrollbar for modern browsers */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0c0b0a;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #282521;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #c5a880;
+  }
+}
+
+/* Hide scrollbar utility for touch/swipe carousels */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Glassmorphism */
+.glass-panel {
+  background: rgba(20, 19, 17, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(197, 168, 128, 0.15);
+}
+
+.glass-nav {
+  background: rgba(12, 11, 10, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+/* Luxury text shadow for hero photography */
+.editorial-shadow {
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.7);
+}
+
+/* Aspect ratios for luxury fashion editorial */
+.aspect-fashion {
+  aspect-ratio: 3 / 4;
+}
+
+.aspect-editorial {
+  aspect-ratio: 4 / 5;
+}
+
+.aspect-tall {
+  aspect-ratio: 9 / 16;
+}
